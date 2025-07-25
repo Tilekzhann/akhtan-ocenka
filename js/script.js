@@ -188,11 +188,16 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
     
+<<<<<<< HEAD
     // Обработка формы и отправка на WhatsApp
+=======
+    // Обработка формы
+>>>>>>> c77f2bcc9f0a45dba9dff5feb17bfa5e2ee5cb30
     const consultForm = document.getElementById('consultForm');
     if(consultForm) {
       consultForm.addEventListener('submit', function(e) {
         e.preventDefault();
+<<<<<<< HEAD
         
         // Берем значения
         const name = this.querySelector('input[type="text"]').value.trim();
@@ -200,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const question = this.querySelector('textarea').value.trim();
         
         // Ваш номер WhatsApp (без +)
-        const whatsappNumber = "77017565531";
+        const whatsappNumber = "77059119101";
         
         // Текст сообщения
         const message = `Здравствуйте, меня зовут ${name}.
@@ -212,11 +217,18 @@ document.addEventListener('DOMContentLoaded', function() {
         window.open(url, '_blank');
         
         // Закрываем модалку
+=======
+        alert('Спасибо! Ваша заявка принята. Мы свяжемся с вами в ближайшее время.');
+>>>>>>> c77f2bcc9f0a45dba9dff5feb17bfa5e2ee5cb30
         modal.style.display = 'none';
         document.body.style.overflow = 'auto';
         this.reset();
       });
     }
+<<<<<<< HEAD
 });
 
+=======
+  });
+>>>>>>> c77f2bcc9f0a45dba9dff5feb17bfa5e2ee5cb30
   

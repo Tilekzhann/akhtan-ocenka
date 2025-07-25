@@ -188,16 +188,35 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
     
-    // Обработка формы
+    // Обработка формы и отправка на WhatsApp
     const consultForm = document.getElementById('consultForm');
     if(consultForm) {
       consultForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        alert('Спасибо! Ваша заявка принята. Мы свяжемся с вами в ближайшее время.');
+        
+        // Берем значения
+        const name = this.querySelector('input[type="text"]').value.trim();
+        const phone = this.querySelector('input[type="tel"]').value.trim();
+        const question = this.querySelector('textarea').value.trim();
+        
+        // Ваш номер WhatsApp (без +)
+        const whatsappNumber = "77017565531";
+        
+        // Текст сообщения
+        const message = `Здравствуйте, меня зовут ${name}.
+Мой телефон: ${phone}.
+Вопрос: ${question}`;
+        
+        // Переход на WhatsApp
+        const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank');
+        
+        // Закрываем модалку
         modal.style.display = 'none';
         document.body.style.overflow = 'auto';
         this.reset();
       });
     }
-  });
+});
+
   

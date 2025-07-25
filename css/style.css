@@ -764,20 +764,3 @@ body {
         gap: 20px;
     }
 }
-.contacts__social {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
-}
-.contacts__social .social-link {
-    font-size: 18px;
-    color: #333;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-.contacts__social .social-link:hover {
-    color: #007bff;
-}

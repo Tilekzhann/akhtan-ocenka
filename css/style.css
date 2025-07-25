@@ -764,3 +764,31 @@ body {
         gap: 20px;
     }
 }
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: #fff;
+    font-size: 28px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    z-index: 9999;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+.whatsapp-button:hover {
+    background-color: #1ebe5b;
+    transform: scale(1.1);
+}
+.logo__icon .logo__img {
+    width: 1em;    /* равен размеру текста (как иконка fontawesome) */
+    height: 1em;   /* пропорционально */
+    display: inline-block;
+    vertical-align: middle;
+}

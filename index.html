@@ -1,294 +1,908 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Профессиональная оценка имущества | 2025</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+
+  <title>BAI GROUP — Корпусная мебель в Актобе | Кухни, шкафы, гардеробные на заказ</title>
+  <meta name="description" content="Изготовление корпусной мебели в Актобе: кухонные гарнитуры, шкафы-купе, гардеробные, тумбы и офисная мебель. Бесплатный замер и 3D-проект, гарантия 2 года." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://example.com/" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="BAI GROUP — Корпусная мебель в Актобе" />
+  <meta property="og:description" content="Кухни, шкафы, гардеробные. Бесплатный замер и 3D-проект. Гарантия 2 года." />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1200&q=80" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Performance hints (CDN images) -->
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <link rel="dns-prefetch" href="https://images.unsplash.com">
+
+  <!-- Favicon (замени на свой) -->
+  <link rel="icon" href="/favicon.ico" />
+
+  <style>
+    :root{
+      --bg: #0b1220;
+      --surface: rgba(255,255,255,.06);
+      --surface-2: rgba(255,255,255,.10);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.72);
+      --brand: #4aa3ff;
+      --brand-2: #2f77ff;
+      --shadow: 0 16px 48px rgba(0,0,0,.35);
+      --radius: 16px;
+      --radius-sm: 12px;
+      --max: 1180px;
+      --pad: 20px;
+      --navH: 76px;
+      --ring: 0 0 0 3px rgba(74,163,255,.35);
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#ffffff;
+        --surface:#f4f6f8;
+        --surface-2:#ffffff;
+        --text:#0c1220;
+        --muted:#49566a;
+        --shadow: 0 16px 48px rgba(15,23,42,.12);
+      }
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      padding-top: var(--navH);
+    }
+
+    /* Focus */
+    :focus-visible{ outline: none; box-shadow: var(--ring); border-radius: 10px; }
+
+    /* Helpers */
+    .container{ max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+    .stack{ display:flex; flex-direction:column; gap: 16px; }
+    .muted{ color: var(--muted); }
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 8px 12px; border-radius: 999px;
+      background: var(--surface); border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(10px);
+      font-weight: 600; font-size: 14px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color: #fff; text-decoration:none; font-weight:800;
+      letter-spacing:.3px;
+      box-shadow: 0 14px 30px rgba(47,119,255,.28);
+      transition: transform .18s ease, filter .18s ease, box-shadow .18s ease;
+      will-change: transform;
+    }
+    .btn:hover{ transform: translateY(-1px); filter: brightness(1.02); }
+    .btn:active{ transform: translateY(0); box-shadow: 0 10px 18px rgba(47,119,255,.22); }
+    .btn.secondary{
+      background: transparent;
+      border: 1px solid rgba(255,255,255,.18);
+      color: var(--text);
+      box-shadow: none;
+    }
+    .btn.secondary:hover{ background: rgba(255,255,255,.06); }
+
+    /* Navbar */
+    .navbar{
+      position: fixed; inset: 0 0 auto 0; height: var(--navH);
+      background: rgba(10,16,28,.70);
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      backdrop-filter: blur(14px);
+      z-index: 1000;
+    }
+    @media (prefers-color-scheme: light){
+      .navbar{ background: rgba(255,255,255,.75); }
+    }
+    .nav{
+      height: var(--navH);
+      display:flex; align-items:center; justify-content:space-between;
+      gap: 14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap: 10px;
+      font-weight: 900;
+      letter-spacing:.4px;
+      text-decoration:none;
+      color: var(--text);
+      user-select:none;
+      white-space:nowrap;
+    }
+    .brand .logo-mark{
+      width: 34px; height: 34px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      box-shadow: 0 10px 22px rgba(47,119,255,.26);
+    }
+    .navlinks{
+      display:flex; align-items:center; gap: 18px;
+    }
+    .navlinks a{
+      color: var(--text);
+      text-decoration:none;
+      font-weight: 700;
+      opacity: .9;
+    }
+    .navlinks a:hover{ opacity:1; color: var(--brand); }
+    .nav-cta{
+      display:flex; align-items:center; gap: 10px;
+    }
+    .phone{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.14);
+      text-decoration:none;
+      color: var(--text);
+      font-weight: 800;
+      white-space:nowrap;
+    }
+    .phone:hover{ border-color: rgba(74,163,255,.35); }
+
+    /* Burger */
+    .burger{
+      display:none;
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      cursor:pointer;
+      align-items:center; justify-content:center;
+      position: relative;
+    }
+    .burger span{
+      position:absolute;
+      width: 18px; height: 2px;
+      background: var(--text);
+      border-radius: 999px;
+      transition: transform .2s ease, opacity .2s ease, top .2s ease;
+    }
+    .burger span:nth-child(1){ top: 16px; }
+    .burger span:nth-child(2){ top: 21px; }
+    .burger span:nth-child(3){ top: 26px; }
+
+    .burger[aria-expanded="true"] span:nth-child(1){ top: 21px; transform: rotate(45deg); }
+    .burger[aria-expanded="true"] span:nth-child(2){ opacity: 0; }
+    .burger[aria-expanded="true"] span:nth-child(3){ top: 21px; transform: rotate(-45deg); }
+
+    /* Mobile drawer */
+    .drawer{
+      display:none;
+      position: fixed;
+      inset: var(--navH) 0 0 0;
+      background: rgba(10,16,28,.78);
+      backdrop-filter: blur(14px);
+      border-top: 1px solid rgba(255,255,255,.10);
+      padding: 18px var(--pad);
+      transform: translateY(-8px);
+      opacity: 0;
+      transition: opacity .18s ease, transform .18s ease;
+      z-index: 999;
+    }
+    .drawer.open{ opacity: 1; transform: translateY(0); }
+    .drawer a{
+      display:block;
+      padding: 14px 12px;
+      border-radius: 12px;
+      text-decoration:none;
+      color: var(--text);
+      font-weight: 800;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+    .drawer a + a{ margin-top: 10px; }
+    .drawer a:hover{ border-color: rgba(74,163,255,.35); }
+
+    /* Hero */
+    .hero{
+      min-height: calc(100svh - var(--navH));
+      display:grid;
+      place-items:center;
+      padding: 34px 0 42px;
+      position: relative;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        radial-gradient(1200px 500px at 20% 15%, rgba(74,163,255,.22), transparent 60%),
+        radial-gradient(900px 500px at 80% 20%, rgba(47,119,255,.18), transparent 62%),
+        linear-gradient(rgba(0,0,0,.50), rgba(0,0,0,.55)),
+        url("https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=2000&q=80");
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.05);
+      transform: scale(1.03);
+      z-index:-1;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 28px;
+      align-items:center;
+    }
+    .hero h1{
+      font-size: clamp(32px, 4vw, 56px);
+      line-height: 1.05;
+      margin: 0;
+      letter-spacing: -0.5px;
+    }
+    .hero p{
+      margin: 14px 0 0;
+      font-size: clamp(16px, 1.4vw, 19px);
+      color: rgba(255,255,255,.86);
+    }
+    .hero-actions{ display:flex; gap: 12px; flex-wrap:wrap; margin-top: 22px; }
+    .hero-card{
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+    .hero-points{
+      display:grid; gap: 12px;
+      margin-top: 14px;
+    }
+    .point{
+      display:flex; gap: 12px; align-items:flex-start;
+      padding: 12px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+    .dot{
+      width: 10px; height: 10px; border-radius: 999px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      box-shadow: 0 8px 16px rgba(47,119,255,.25);
+      margin-top: 5px;
+      flex: 0 0 auto;
+    }
+    .point strong{ display:block; margin-bottom: 2px; }
+    .point span{ color: rgba(255,255,255,.78); font-weight: 600; font-size: 14px; }
+
+    /* Sections */
+    section{ padding: 64px 0; }
+    .title{
+      display:flex; flex-direction:column; gap: 10px;
+      margin-bottom: 28px;
+    }
+    .title h2{
+      margin:0;
+      font-size: clamp(24px, 2.5vw, 36px);
+      letter-spacing: -0.3px;
+    }
+    .title p{ margin:0; color: var(--muted); font-weight: 600; }
+
+    /* Cards / grids */
+    .grid-4{
+      display:grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 16px;
+    }
+    .card{
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .card h3{ margin: 8px 0 6px; font-size: 18px; }
+    .card p{ margin:0; color: var(--muted); font-weight: 600; }
+    .icon{
+      width: 44px; height: 44px;
+      border-radius: 14px;
+      display:grid; place-items:center;
+      background: rgba(74,163,255,.14);
+      border: 1px solid rgba(74,163,255,.26);
+      font-size: 22px;
+    }
+
+    /* Categories */
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 16px;
+    }
+    .media{
+      position:relative;
+      border-radius: var(--radius);
+      overflow:hidden;
+      min-height: 320px;
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: var(--shadow);
+      background: rgba(255,255,255,.04);
+    }
+    .media img{
+      width:100%; height:100%;
+      object-fit: cover;
+      display:block;
+      transform: scale(1.02);
+      transition: transform .35s ease;
+    }
+    .media:hover img{ transform: scale(1.08); }
+    .media .overlay{
+      position:absolute; inset:auto 0 0 0;
+      padding: 16px;
+      background: linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,.15));
+    }
+    .media h3{ margin:0; font-size: 20px; }
+    .media p{ margin: 6px 0 0; color: rgba(255,255,255,.84); font-weight: 600; }
+
+    /* Pricing */
+    .table-wrap{
+      overflow:auto;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.12);
+      background: var(--surface-2);
+      box-shadow: var(--shadow);
+    }
+    table{
+      width:100%;
+      border-collapse: collapse;
+      min-width: 720px;
+    }
+    th, td{
+      padding: 14px 16px;
+      text-align:left;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      font-weight: 650;
+    }
+    th{
+      background: rgba(255,255,255,.06);
+      position: sticky; top: 0;
+      z-index: 1;
+    }
+    tr:hover td{ background: rgba(255,255,255,.04); }
+
+    /* Form */
+    .form{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .field{ display:flex; flex-direction:column; gap: 8px; }
+    .field label{ font-weight: 850; }
+    input, select, textarea{
+      width:100%;
+      padding: 12px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.10);
+      color: var(--text);
+      font-size: 16px;
+    }
+    @media (prefers-color-scheme: light){
+      input, select, textarea{ background:#fff; border-color: rgba(15,23,42,.14); color:#0c1220; }
+    }
+    textarea{ min-height: 140px; resize: vertical; }
+    .form .full{ grid-column: 1 / -1; }
+    .note{ font-size: 13px; color: var(--muted); margin-top: 6px; }
+    .honeypot{ display:none !important; }
+
+    /* Footer */
+    footer{
+      padding: 52px 0 28px;
+      border-top: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 18px;
+    }
+    footer h3{ margin:0 0 10px; }
+    footer a{ color: var(--text); text-decoration:none; opacity:.9; }
+    footer a:hover{ color: var(--brand); opacity: 1; }
+    .copyright{
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.10);
+      color: var(--muted);
+      font-weight: 650;
+      font-size: 14px;
+      display:flex; justify-content:space-between; gap: 12px; flex-wrap:wrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .grid-4{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .grid-3{ grid-template-columns: 1fr; }
+      .footer-grid{ grid-template-columns: 1fr; }
+      table{ min-width: 640px; }
+    }
+    @media (max-width: 768px){
+      .navlinks{ display:none; }
+      .burger{ display:flex; }
+      .drawer{ display:block; }
+      .form{ grid-template-columns: 1fr; }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior:auto; }
+      *{ transition:none !important; animation:none !important; }
+      .media img{ transform:none !important; }
+    }
+  </style>
+
+  <!-- Schema.org (LocalBusiness) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "BAI GROUP",
+    "description": "Производство корпусной мебели в Актобе: кухонные гарнитуры, шкафы-купе, гардеробные, тумбы, офисная мебель.",
+    "telephone": "+7-706-417-05-44",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Актобе",
+      "addressCountry": "KZ"
+    },
+    "areaServed": "Актобе",
+    "url": "https://example.com/"
+  }
+  </script>
 </head>
+
 <body>
-    <!-- Прелоадер -->
-    <div class="preloader">
-        <div class="loader"></div>
-    </div>
-
-    <!-- Шапка -->
-    <header class="header">
-        <div class="container">
-            <div class="header__inner">
-                <a href="assets/logo.png" class="logo">
-                    <span class="logo__icon">
-                        <img src="assets/logo.png" alt="Логотип" class="logo__img">
-                    </span>
-                    <span class="logo__text">Ахтан Оценка</span>
-                </a>
-                
-                
-                <nav class="nav">
-                    <a href="#services" class="nav__link">Услуги</a>
-                    <a href="#certificates" class="nav__link">Сертификаты</a>
-                    <a href="#contacts" class="nav__link">Контакты</a>
-                </nav>
-                
-                <div class="header__contacts">
-                    <a href="tel:+77059119101" class="phone">+7 (705) 911-91-01</a>
-                </div>
-                
-                <button class="burger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Герой секция -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero__content">
-                <h1 class="hero__title">
-                    <span class="word-static">Профессиональная оценка движимого и недвижимого имущества</span>
-                  </h1>               
-                <p class="hero__subtitle">Точные расчеты. Юридическая надежность. Современные методы анализа.</p>
-                <button class="btn btn--primary" id="consultBtn">Заказать консультацию</button>
-            </div>
-            <div class="hero__image">
-                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Оценка недвижимости">
-            </div>
-        </div>
-    </section>
-
-    <!-- Услуги -->
-    <section class="services" id="services">
-        <div class="container">
-            <h2 class="section-title">Наши услуги</h2>
-            
-            <div class="services__grid">
-                <div class="service-card">
-                    <div class="service-card__icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3 class="service-card__title">Оценка недвижимости</h3>
-                    <p class="service-card__desc">Определение рыночной стоимости квартир, домов, коммерческой недвижимости</p>
-                    <div class="service-card__price">от 15 000 ₸</div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-card__icon">
-                        <i class="fas fa-car"></i>
-                    </div>
-                    <h3 class="service-card__title">Оценка транспорта</h3>
-                    <p class="service-card__desc">Легковые и грузовые автомобили, спецтехника, водный транспорт</p>
-                    <div class="service-card__price">от 50 000 ₸</div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-card__icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <h3 class="service-card__title">Оценка бизнеса</h3>
-                    <p class="service-card__desc">Комплексный анализ предприятия и его активов</p>
-                    <div class="service-card__price">от 100 000 ₸</div>
-                </div>
-                
-                
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Сертификаты -->
-    <section class="certificates" id="certificates">
-        <div class="container">
-            <h2 class="section-title">Мои сертификаты</h2>
-            <p class="section-subtitle">Профессиональные подтверждения квалификации</p>
-            
-            <div class="certificates__gallery">
-                <div class="certificate">
-                    <img src="assets/oc1.png" alt="Сертификат оценщика" class="certificate__image">
-                </div>
-                <div class="certificate">
-                    <img src="assets/oc2.png" alt="Сертификат оценщика" class="certificate__image">
-                </div>
-                <div class="certificate">
-                    <img src="assets/oc3.png" alt="Сертификат оценщика" class="certificate__image">
-                </div>
-                <div class="certificate">
-                    <img src="assets/oc4.png" alt="Сертификат оценщика" class="certificate__image">
-                </div>
-                <div class="certificate">
-                    <img src="assets/oc5.png" alt="Сертификат оценщика" class="certificate__image">
-                </div>
-            </div>
-            
-            <div class="certificates__modal">
-                <span class="certificates__close">&times;</span>
-                <img class="certificates__modal-content" id="modalImage">
-                <div id="caption"></div>
-            </div>
-        </div>
-    </section>
-
-<!-- Карта 2ГИС -->
-<section class="map" id="map">
+  <!-- Navbar -->
+  <header class="navbar" role="banner">
     <div class="container">
-        <h2 class="section-title">Мы на карте</h2>
-        <div class="map__wrapper" style="position:relative;overflow:hidden;">
-            <iframe 
-                src="https://yandex.kz/map-widget/v1/-/CHT0I09p" 
-                width="100%" 
-                height="450" 
-                frameborder="0" 
-                allowfullscreen="true">
-            </iframe>
+      <div class="nav">
+        <a class="brand" href="#top" aria-label="BAI GROUP — на главную">
+          <span class="logo-mark" aria-hidden="true"></span>
+          <span>BAI GROUP</span>
+        </a>
+
+        <nav class="navlinks" aria-label="Основная навигация">
+          <a href="#about">О нас</a>
+          <a href="#categories">Категории</a>
+          <a href="#advantages">Преимущества</a>
+          <a href="#prices">Цены</a>
+          <a href="#contact">Контакты</a>
+        </nav>
+
+        <div class="nav-cta">
+          <a class="phone" href="tel:+77064170544" aria-label="Позвонить в BAI GROUP: +7 706 417 05 44">📞 +7 (706) 417 05 44</a>
+          <button class="burger" id="burger"
+                  aria-label="Открыть меню"
+                  aria-controls="drawer"
+                  aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
         </div>
+      </div>
     </div>
-</section>
+  </header>
 
+  <!-- Mobile Drawer -->
+  <div class="drawer" id="drawer" hidden>
+    <div class="container stack" aria-label="Мобильное меню">
+      <a href="#about">О нас</a>
+      <a href="#categories">Категории</a>
+      <a href="#advantages">Преимущества</a>
+      <a href="#prices">Цены</a>
+      <a href="#contact">Контакты</a>
+      <a href="tel:+77064170544" class="btn" style="text-align:center;">Позвонить</a>
+    </div>
+  </div>
 
+  <!-- Hero -->
+  <main id="top">
+    <section class="hero" aria-label="Главный экран">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="stack">
+            <span class="chip">📍 Актобе • Корпусная мебель на заказ</span>
+            <h1>Корпусная мебель BAI GROUP: кухня, шкафы, гардеробные</h1>
+            <p>Производим надежную корпусную мебель под размеры вашего помещения. Бесплатный замер и 3D-проект, аккуратный монтаж, гарантия 2 года.</p>
 
-
-
-    <!-- Контакты -->
-    <section class="contacts" id="contacts">
-        <div class="container">
-            <h2 class="section-title">Свяжитесь со мной</h2>
-            
-            <div class="contacts__inner">
-                <div class="contacts__info">
-                    <div class="contact-item">
-                        <div class="contact-item__icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <div class="contact-item__content">
-                            <h3 class="contact-item__title">Телефон</h3>
-                            <a href="tel:+77059119101" class="contact-item__value">+7 (705) 911-91-01</a>
-                            <a href="tel:+77017565531" class="contact-item__value">+7 (701) 756-55-31</a>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-item__icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-item__content">
-                            <h3 class="contact-item__title">Email</h3>
-                            <a href="mailto:ahtan@mail.ru" class="contact-item__value">ahtan@mail.ru</a>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-item__icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-item__content">
-                            <h3 class="contact-item__title">Адрес</h3>
-                            <a href="https://go.2gis.com/AMwys" class="contact-item__value">г.Актобе ул.Марьесева 99, 3-этаж каб.303</a>
-                        </div>
-                    </div>
-                    
-                    <div class="social-links">
-                        <div class="contact-item__icon">
-                            <i class="fab fa-whatsapp"></i>
-                        </div>
-                        <div class="contact-item__content">
-                            <h3 class="contact-item__title">Whatsapp</h3>
-                            <a href="https://wa.me/77017565531" class="contact-item__value">87017565531</a>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <div class="contact-item__icon">
-                            <i class="fab fa-whatsapp"></i>
-                        </div>
-                        <div class="contact-item__content">
-                            <h3 class="contact-item__title">Whatsapp</h3>
-                            <a href="https://wa.me/77059119101" class="contact-item__value">87059119101</a>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <div class="contact-item__icon">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                        <div class="contact-item__content">
-                            <h3 class="contact-item__title">Instagram</h3>
-                        <a href="https://www.instagram.com/too.akhtan.ocenka/" class="contact-item__value">too.akhan.ocenka</a>
-                        </div>
-                    </div>
+            <div class="hero-actions">
+              <a class="btn" href="#contact">Рассчитать стоимость</a>
+              <a class="btn secondary" href="#categories">Смотреть работы</a>
             </div>
+
+            <p class="muted" style="margin-top:10px;font-weight:700;">
+              Специализация: кухонные шкафы • тумбы • гардеробные • офисная мебель (без мягкой мебели)
+            </p>
+          </div>
+
+          <aside class="hero-card" aria-label="Коротко о сервисе">
+            <div class="hero-points">
+              <div class="point">
+                <span class="dot" aria-hidden="true"></span>
+                <div>
+                  <strong>Бесплатный замер</strong>
+                  <span>Приезжаем, уточняем размеры, обсуждаем материалы.</span>
+                </div>
+              </div>
+              <div class="point">
+                <span class="dot" aria-hidden="true"></span>
+                <div>
+                  <strong>3D-проект</strong>
+                  <span>Покажем, как будет выглядеть мебель до запуска в производство.</span>
+                </div>
+              </div>
+              <div class="point">
+                <span class="dot" aria-hidden="true"></span>
+                <div>
+                  <strong>Сроки под контролем</strong>
+                  <span>Фиксируем этапы, держим связь и подтверждаем готовность.</span>
+                </div>
+              </div>
+              <div class="point">
+                <span class="dot" aria-hidden="true"></span>
+                <div>
+                  <strong>Гарантия 2 года</strong>
+                  <span>По договору. Используем проверенную фурнитуру.</span>
+                </div>
+              </div>
+            </div>
+          </aside>
         </div>
+      </div>
     </section>
 
-    <!-- Футер -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__inner">
-                <div class="footer__col">
-                    <a href="#" class="logo">
-                        <span class="logo__icon"><i class="fas fa-balance-scale"></i></span>
-                        <span class="logo__text">Ахтан Оценка</span>
-                    </a>
-                    <p class="footer__text">Профессиональная оценка имущества с 2025 года</p>
-                </div>
-                
-                <div class="footer__col">
-                    <h3 class="footer__title">Услуги</h3>
-                    <ul class="footer__links">
-                        <li><a href="#">Оценка недвижимости</a></li>
-                        <li><a href="#">Оценка транспорта</a></li>
-                        <li><a href="#">Оценка бизнеса</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer__col">
-                    <h3 class="footer__title">Контакты</h3>
-                    <ul class="footer__contacts">
-                        <li><i class="fas fa-phone-alt"></i> +7 (705) 911-91-01</li>
-                        <li><i class="fas fa-phone-alt"></i> +7 (701) 756-55-31</li>
-                        <li><i class="fas fa-envelope"></i> ahtan@mail.ru</li>
-                        <li><i class="fas fa-map-marker-alt"></i> г.Актобе ул.Марьесева 99, 3-этаж каб.303</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer__bottom">
-                <p class="footer__copyright">© 2025. Все права защищены.</p>
-                <a href="#" class="footer__policy">Политика конфиденциальности</a>
-            </div>
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <div class="title">
+          <h2>О компании BAI GROUP</h2>
+          <p>Фокус на корпусной мебели — в этом мы сильнее всего.</p>
         </div>
-    </footer>
 
-    <!-- Кнопка "Наверх" -->
-   <!--
-    <button id="backToTop" class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-    -->
-    <a href="https://wa.me/77059119101" id="whatsappButton" class="whatsapp-button" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-    
-    <script src="js/script.js"></script>
-    <!-- Модальное окно для консультации -->
-<div class="modal" id="consultModal">
-    <div class="modal__content">
-        <span class="modal__close">&times;</span>
-        <h2>Заказать консультацию</h2>
-        <form id="consultForm">
-            <div class="form-group">
-                <input type="text" placeholder="Ваше имя" required>
+        <div class="card">
+          <p style="margin:0;font-weight:700;color:var(--muted);">
+            Мы проектируем и производим корпусную мебель, которая служит годами: кухонные гарнитуры, шкафы-купе,
+            гардеробные, тумбы и офисные решения. Не распыляемся на мягкую мебель — делаем прочные конструкции,
+            точные стыки и продуманную эргономику.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Advantages -->
+    <section id="advantages">
+      <div class="container">
+        <div class="title">
+          <h2>Преимущества</h2>
+          <p>Сервис и качество, за которые нас выбирают.</p>
+        </div>
+
+        <div class="grid-4">
+          <article class="card">
+            <div class="icon" aria-hidden="true">🔨</div>
+            <h3>Прочность</h3>
+            <p>Качественные материалы и фурнитура, аккуратная сборка и монтаж.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">📐</div>
+            <h3>Индивидуально</h3>
+            <p>Замер + 3D-проект, подгонка под ваши размеры и задачи.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">⏱️</div>
+            <h3>Сроки</h3>
+            <p>Планируем этапы и держим вас в курсе готовности.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">🛡️</div>
+            <h3>Гарантия 2 года</h3>
+            <p>Уверенность в результате и поддержка после установки.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section id="categories">
+      <div class="container">
+        <div class="title">
+          <h2>Наша продукция</h2>
+          <p>Ключевые направления, которые делаем чаще всего.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="media">
+            <img
+              src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=80"
+              srcset="
+                https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=600&q=80 600w,
+                https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=80 900w,
+                https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1200&q=80 1200w"
+              sizes="(max-width: 980px) 100vw, 33vw"
+              alt="Кухонные шкафы и гарнитуры"
+              loading="lazy" decoding="async" />
+            <div class="overlay">
+              <h3>Кухонные шкафы</h3>
+              <p>Гарнитуры, навесные и нижние модули, пеналы.</p>
             </div>
-            <div class="form-group">
-                <input type="tel" placeholder="Ваш телефон" required>
+          </article>
+
+          <article class="media">
+            <img
+              src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80"
+              srcset="
+                https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80 600w,
+                https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80 900w,
+                https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=80 1200w"
+              sizes="(max-width: 980px) 100vw, 33vw"
+              alt="Гардеробные системы и шкафы"
+              loading="lazy" decoding="async" />
+            <div class="overlay">
+              <h3>Гардеробные</h3>
+              <p>Встроенные и корпусные шкафы, системы хранения.</p>
             </div>
-            <div class="form-group">
-                <textarea placeholder="Ваш вопрос" rows="4"></textarea>
+          </article>
+
+          <article class="media">
+            <img
+              src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80"
+              srcset="
+                https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=600&q=80 600w,
+                https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80 900w,
+                https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80 1200w"
+              sizes="(max-width: 980px) 100vw, 33vw"
+              alt="Офисная мебель"
+              loading="lazy" decoding="async" />
+            <div class="overlay">
+              <h3>Офисная мебель</h3>
+              <p>Шкафы, полки, рабочие места, тумбы.</p>
             </div>
-            <button type="submit" class="btn btn--primary">Отправить заявку</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prices -->
+    <section id="prices">
+      <div class="container">
+        <div class="title">
+          <h2>Примерные цены</h2>
+          <p>Точная стоимость зависит от размеров, фурнитуры и материалов.</p>
+        </div>
+
+        <div class="table-wrap" role="region" aria-label="Таблица цен" tabindex="0">
+          <table>
+            <thead>
+              <tr>
+                <th>Тип мебели</th>
+                <th>Материал</th>
+                <th>Примерная стоимость</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Кухонный гарнитур (3 м)</td>
+                <td>ЛДСП</td>
+                <td>от 250 000 ₸</td>
+              </tr>
+              <tr>
+                <td>Шкаф-купе (2 × 2.3 м)</td>
+                <td>ЛДСП + фурнитура</td>
+                <td>от 180 000 ₸</td>
+              </tr>
+              <tr>
+                <td>Офисный шкаф</td>
+                <td>МДФ</td>
+                <td>от 90 000 ₸</td>
+              </tr>
+              <tr>
+                <td>Тумба под раковину</td>
+                <td>Влагостойкий МДФ</td>
+                <td>от 70 000 ₸</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <div class="title">
+          <h2>Свяжитесь с нами</h2>
+          <p>Оставьте заявку — рассчитаем стоимость и предложим варианты.</p>
+        </div>
+
+        <!-- ВАЖНО: для реальной отправки подключи backend/CRM (Telegram bot, WhatsApp API, email, Bitrix, etc.) -->
+        <form class="form" id="contactForm" novalidate>
+          <div class="field">
+            <label for="name">Ваше имя <span aria-hidden="true">*</span></label>
+            <input id="name" name="name" type="text" autocomplete="name" required minlength="2"
+                   placeholder="Например, Айгүл" />
+          </div>
+
+          <div class="field">
+            <label for="phone">Телефон <span aria-hidden="true">*</span></label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required
+                   placeholder="+7 706 417 05 44" />
+          </div>
+
+          <div class="field full">
+            <label for="category">Тип мебели</label>
+            <select id="category" name="category">
+              <option value="kitchen">Кухонные шкафы</option>
+              <option value="wardrobe">Гардеробные</option>
+              <option value="office">Офисная мебель</option>
+              <option value="other">Другое</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label for="message">Пожелания</label>
+            <textarea id="message" name="message" placeholder="Размеры (если знаете), материалы, фото/референсы, сроки..."></textarea>
+            <div class="note">Совет: добавьте примерные размеры и пожелания по материалу/фурнитуре — так расчет будет точнее.</div>
+          </div>
+
+          <!-- Honeypot against bots -->
+          <div class="honeypot">
+            <label>Оставьте поле пустым</label>
+            <input type="text" name="company" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <div class="field full">
+            <button class="btn" type="submit">Отправить заявку</button>
+            <div class="note">Нажимая «Отправить», вы соглашаетесь на обработку данных для связи по заявке.</div>
+          </div>
+
+          <output class="field full" id="formStatus" role="status" aria-live="polite" style="margin-top:-6px;"></output>
         </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>BAI GROUP</h3>
+          <p class="muted" style="margin:0;font-weight:700;">Производство корпусной мебели в Актобе</p>
+          <p class="muted" style="margin:12px 0 0;font-weight:700;">
+            Специализация: кухонные шкафы, тумбы, гардеробные, офисная мебель
+          </p>
+        </div>
+
+        <div>
+          <h3>Контакты</h3>
+          <p style="margin:0 0 10px;"><a href="tel:+77064170544">📞 +7 (706) 417 05 44</a></p>
+          <p class="muted" style="margin:0;font-weight:700;">📍 г. Актобе</p>
+          <p class="muted" style="margin:10px 0 0;font-weight:700;">
+            Пн-Пт: 10:00-19:00<br/>Сб: 10:00-13:00<br/>Вс: выходной
+          </p>
+        </div>
+
+        <div>
+          <h3>Навигация</h3>
+          <div class="stack" style="gap:10px;">
+            <a href="#about">О компании</a>
+            <a href="#categories">Категории</a>
+            <a href="#advantages">Преимущества</a>
+            <a href="#prices">Цены</a>
+            <a href="#contact">Расчёт стоимости</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <span>© BAI GROUP 2025 — Корпусная мебель в Актобе</span>
+        <span class="muted">Сделано с упором на скорость, доступность и SEO</span>
+      </div>
     </div>
-</div>
+  </footer>
+
+  <script>
+    // Mobile menu (a11y)
+    const burger = document.getElementById('burger');
+    const drawer = document.getElementById('drawer');
+
+    function setDrawer(open){
+      burger.setAttribute('aria-expanded', String(open));
+      drawer.hidden = !open;
+      drawer.classList.toggle('open', open);
+      if(open){
+        // lock scroll
+        document.documentElement.style.overflow = 'hidden';
+      } else {
+        document.documentElement.style.overflow = '';
+      }
+    }
+
+    burger.addEventListener('click', () => {
+      const isOpen = burger.getAttribute('aria-expanded') === 'true';
+      setDrawer(!isOpen);
+    });
+
+    // Close on outside click / Esc
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape' && burger.getAttribute('aria-expanded') === 'true'){
+        setDrawer(false);
+        burger.focus();
+      }
+    });
+
+    drawer.addEventListener('click', (e) => {
+      // if click on link, close
+      if(e.target.closest('a')){
+        setDrawer(false);
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      const isOpen = burger.getAttribute('aria-expanded') === 'true';
+      if(!isOpen) return;
+      const inside = e.target.closest('#drawer') || e.target.closest('#burger');
+      if(!inside) setDrawer(false);
+    });
+
+    // Smooth scroll offset (keep -navH feeling) is handled by body padding-top.
+    // Form handling (client-side demo)
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+
+    function validatePhone(value){
+      // простая проверка: цифры >= 10
+      const digits = (value || '').replace(/\D/g, '');
+      return digits.length >= 10;
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      status.textContent = '';
+
+      const data = new FormData(form);
+
+      // honeypot
+      if ((data.get('company') || '').trim().length > 0) return;
+
+      const name = (data.get('name') || '').trim();
+      const phone = (data.get('phone') || '').trim();
+
+      if(name.length < 2){
+        status.textContent = 'Пожалуйста, укажите имя (минимум 2 символа).';
+        return;
+      }
+      if(!validatePhone(phone)){
+        status.textContent = 'Пожалуйста, укажите корректный телефон.';
+        return;
+      }
+
+      // TODO: вместо этого блока подключи реальную отправку:
+      // fetch('/api/lead', { method:'POST', body: JSON.stringify({...}), headers:{'Content-Type':'application/json'} })
+      status.textContent = 'Заявка отправлена! Мы свяжемся с вами в ближайшее время.';
+      form.reset();
+    });
+  </script>
 </body>
 </html>

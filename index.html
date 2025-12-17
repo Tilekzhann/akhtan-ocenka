@@ -4,569 +4,921 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 
-  <title>BAI GROUP — Корпусная мебель в Актобе | Кухни, шкафы, гардеробные на заказ</title>
-  <meta name="description" content="Изготовление корпусной мебели в Актобе: кухни, шкафы-купе, гардеробные, тумбы и офисная мебель. Бесплатный замер и 3D-проект, гарантия 2 года." />
+  <title>BAI GROUP — Эксклюзивная корпусная мебель в Актобе | Премиум кухни и гардеробные</title>
+  <meta name="description" content="Авторская корпусная мебель премиум-класса в Актобе. Индивидуальные проекты кухонь, гардеробных, офисной мебели с 3D-визуализацией." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://example.com/" />
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="BAI GROUP — Корпусная мебель в Актобе" />
-  <meta property="og:description" content="Кухни, шкафы, гардеробные. Бесплатный замер и 3D-проект. Гарантия 2 года." />
+  <meta property="og:title" content="BAI GROUP — Авторская корпусная мебель в Актобе" />
+  <meta property="og:description" content="Премиум кухни, гардеробные системы, офисные решения. Европейские материалы, точная сборка, гарантия." />
   <meta property="og:locale" content="ru_RU" />
   <meta property="og:image" content="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1200&q=80" />
   <meta name="twitter:card" content="summary_large_image" />
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
   <link rel="dns-prefetch" href="https://images.unsplash.com">
   <link rel="icon" href="/favicon.ico" />
 
   <style>
     :root{
-      /* Brand / Yellow */
-      --brand: #F7C600;        /* основной жёлтый */
-      --brand-2: #FFDE59;      /* мягкий жёлтый */
-      --brand-ink: #111111;    /* текст на жёлтом */
-      --accent: #111111;       /* акцент (черный) */
+      /* Premium Color Palette */
+      --gold: #D4AF37;          /* Премиум золотой */
+      --gold-light: #E8D294;    /* Светлый золотой */
+      --gold-dark: #B8941F;     /* Тёмный золотой */
+      --charcoal: #1A1A1A;      /* Глубокий чёрный */
+      --charcoal-light: #2D2D2D;/* Светлее чёрный */
+      --paper: #F8F5F0;         /* Фон цвета пергамента */
+      --paper-dark: #ECE6DB;    /* Темнее фон */
+      --accent: #8B7355;        /* Акцентный коричневый */
 
-      /* Surfaces (light premium) */
-      --bg: #FFF7D6;           /* общий фон страницы */
-      --surface: rgba(255,255,255,.70);
-      --surface-2: rgba(255,255,255,.92);
-      --border: rgba(17,17,17,.12);
-      --text: rgba(17,17,17,.92);
-      --muted: rgba(17,17,17,.65);
+      /* Surfaces */
+      --bg: var(--paper);
+      --surface: rgba(248, 245, 240, 0.85);
+      --surface-2: rgba(255, 255, 255, 0.95);
+      --border: rgba(212, 175, 55, 0.15);
+      --border-heavy: rgba(212, 175, 55, 0.3);
+      --text: var(--charcoal);
+      --text-light: #5A5A5A;
+      --muted: #777777;
 
-      --shadow: 0 18px 50px rgba(17,17,17,.14);
-      --shadow-soft: 0 10px 26px rgba(17,17,17,.10);
-
-      --radius: 18px;
+      /* Effects */
+      --shadow: 0 25px 50px -12px rgba(26, 26, 26, 0.08);
+      --shadow-heavy: 0 35px 60px -15px rgba(26, 26, 26, 0.15);
+      --shadow-gold: 0 15px 30px rgba(212, 175, 55, 0.15);
+      
+      --radius: 20px;
       --radius-sm: 12px;
-      --max: 1180px;
-      --pad: 20px;
-      --navH: 76px;
-      --ring: 0 0 0 3px rgba(247,198,0,.35);
+      --max: 1280px;
+      --pad: clamp(20px, 4vw, 40px);
+      --navH: 90px;
+      --ring: 0 0 0 3px rgba(212, 175, 55, 0.2);
+      
+      /* Fonts */
+      --font-heading: 'Playfair Display', serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
-    /* RESET */
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
+    /* RESET & BASE */
+    *{ 
+      box-sizing: border-box; 
+      margin: 0;
+    }
+    
+    html{ 
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--navH);
+    }
+    
     body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      font-family: var(--font-body);
       background: var(--bg);
       color: var(--text);
-      line-height: 1.55;
-      text-rendering: optimizeLegibility;
+      line-height: 1.7;
+      font-weight: 400;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
       padding-top: var(--navH);
+      overflow-x: hidden;
     }
 
-    :focus-visible{ outline:none; box-shadow: var(--ring); border-radius: 12px; }
+    :focus-visible{ 
+      outline: none; 
+      box-shadow: var(--ring); 
+      border-radius: var(--radius-sm);
+    }
 
-    .container{ max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
-    .stack{ display:flex; flex-direction:column; gap: 16px; }
-    .muted{ color: var(--muted); }
+    /* Typography */
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--charcoal);
+    }
+
+    h1 { font-size: clamp(3rem, 5vw, 4.5rem); }
+    h2 { font-size: clamp(2.25rem, 4vw, 3.25rem); }
+    h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+    
+    .lead {
+      font-size: clamp(1.125rem, 2vw, 1.375rem);
+      color: var(--text-light);
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .small {
+      font-size: 0.875rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .gold-text {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* Utility */
+    .container{ 
+      max-width: var(--max); 
+      margin: 0 auto; 
+      padding: 0 var(--pad); 
+    }
+    
+    .stack{ 
+      display: flex; 
+      flex-direction: column; 
+      gap: 1.5rem; 
+    }
+    
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
 
     /* Buttons */
     .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding: 14px 18px;
-      border-radius: 12px;
-      border: 1px solid rgba(17,17,17,.14);
-      background: linear-gradient(135deg, var(--accent), #000);
-      color: #fff; text-decoration:none; font-weight:900;
-      letter-spacing:.2px;
-      box-shadow: var(--shadow-soft);
-      transition: transform .18s ease, filter .18s ease, box-shadow .18s ease;
-      will-change: transform;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 1.125rem 2.5rem;
+      border-radius: var(--radius-sm);
+      border: 2px solid var(--gold);
+      background: var(--gold);
+      color: var(--charcoal);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
     }
-    .btn:hover{ transform: translateY(-1px); filter: brightness(1.02); }
-    .btn:active{ transform: translateY(0); box-shadow: 0 8px 18px rgba(17,17,17,.16); }
 
-    .btn.secondary{
-      background: transparent;
-      border: 1px solid rgba(17,17,17,.18);
-      color: var(--text);
-      box-shadow: none;
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
-    .btn.secondary:hover{ background: rgba(255,255,255,.55); }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-gold), var(--shadow);
+      border-color: var(--gold-dark);
+    }
+
+    .btn:hover::before {
+      opacity: 1;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--charcoal);
+      border-color: var(--border-heavy);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(212, 175, 55, 0.05);
+      border-color: var(--gold);
+    }
 
     /* Chip */
     .chip{
-      display:inline-flex; align-items:center; gap:8px;
-      padding: 8px 12px; border-radius: 999px;
-      background: rgba(255,255,255,.70);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      border-radius: 100px;
+      background: rgba(212, 175, 55, 0.1);
       border: 1px solid var(--border);
-      font-weight: 800; font-size: 14px;
-      box-shadow: 0 10px 22px rgba(17,17,17,.06);
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: var(--gold-dark);
+      backdrop-filter: blur(10px);
     }
 
     /* Navbar */
     .navbar{
-      position: fixed; inset: 0 0 auto 0; height: var(--navH);
-      background: rgba(255, 236, 150, .65);
-      border-bottom: 1px solid rgba(17,17,17,.10);
-      backdrop-filter: blur(14px);
-      z-index: 1000;
-    }
-    .nav{
+      position: fixed;
+      inset: 0 0 auto 0;
       height: var(--navH);
-      display:flex; align-items:center; justify-content:space-between;
-      gap: 14px;
+      background: rgba(248, 245, 240, 0.92);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(20px);
+      z-index: 1000;
+      transition: all 0.3s ease;
     }
 
-    /* Brand / logo */
-    .brand{
-      display:flex; align-items:center; gap: 12px;
-      text-decoration:none;
-      color: var(--text);
-      user-select:none;
-      white-space:nowrap;
-      font-weight: 900;
-      letter-spacing:.3px;
+    .navbar.scrolled {
+      background: rgba(248, 245, 240, 0.98);
+      box-shadow: var(--shadow);
     }
-    .brand-logo{
-      width: 46px; height: 46px;
-      border-radius: 12px;
-      background: rgba(255,255,255,.75);
-      border: 1px solid rgba(17,17,17,.12);
-      box-shadow: 0 10px 22px rgba(17,17,17,.10);
-      display:grid;
-      place-items:center;
-      overflow:hidden;
-      flex: 0 0 auto;
-    }
-    .brand-logo img{
-      width: 100%;
+
+    .nav{
       height: 100%;
-      object-fit: contain;
-      padding: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
     }
-    .brand-name{ font-size: 18px; }
+
+    /* Brand */
+    .brand{
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      color: var(--charcoal);
+      user-select: none;
+      white-space: nowrap;
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-logo{
+      width: 60px;
+      height: 60px;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border: 1px solid var(--border-heavy);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      box-shadow: var(--shadow-gold);
+      transition: transform 0.3s ease;
+    }
+
+    .brand:hover .brand-logo {
+      transform: rotate(-5deg) scale(1.05);
+    }
+
+    .brand-logo img{
+      width: 80%;
+      height: 80%;
+      object-fit: contain;
+      filter: brightness(0) saturate(100%);
+    }
+
+    .brand-name{
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 1.5rem;
+      background: linear-gradient(to right, var(--gold), var(--gold-dark));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
 
     .navlinks{
-      display:flex; align-items:center; gap: 18px;
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      margin-left: auto;
     }
+
     .navlinks a{
-      color: var(--text);
-      text-decoration:none;
-      font-weight: 850;
-      opacity: .92;
-    }
-    .navlinks a:hover{ opacity:1; }
-
-    .nav-cta{
-      display:flex; align-items:center; gap: 10px;
-    }
-    .phone{
-      display:inline-flex; align-items:center; gap:10px;
-      padding: 10px 14px;
-      border-radius: 12px;
-      background: rgba(255,255,255,.72);
-      border: 1px solid rgba(17,17,17,.14);
-      text-decoration:none;
-      color: var(--text);
-      font-weight: 900;
-      white-space:nowrap;
-      box-shadow: 0 10px 22px rgba(17,17,17,.08);
-    }
-    .phone:hover{ border-color: rgba(17,17,17,.22); }
-
-    /* Burger */
-    .burger{
-      display:none;
-      width: 44px; height: 44px;
-      border-radius: 12px;
-      border: 1px solid rgba(17,17,17,.16);
-      background: rgba(255,255,255,.70);
-      cursor:pointer;
-      align-items:center; justify-content:center;
+      color: var(--charcoal);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
       position: relative;
-      box-shadow: 0 10px 22px rgba(17,17,17,.08);
+      padding: 0.5rem 0;
     }
-    .burger span{
-      position:absolute;
-      width: 18px; height: 2px;
-      background: var(--text);
-      border-radius: 999px;
-      transition: transform .2s ease, opacity .2s ease, top .2s ease;
-    }
-    .burger span:nth-child(1){ top: 16px; }
-    .burger span:nth-child(2){ top: 21px; }
-    .burger span:nth-child(3){ top: 26px; }
-    .burger[aria-expanded="true"] span:nth-child(1){ top: 21px; transform: rotate(45deg); }
-    .burger[aria-expanded="true"] span:nth-child(2){ opacity: 0; }
-    .burger[aria-expanded="true"] span:nth-child(3){ top: 21px; transform: rotate(-45deg); }
 
-    /* Mobile drawer */
+    .navlinks a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width 0.3s ease;
+    }
+
+    .navlinks a:hover::after {
+      width: 100%;
+    }
+
+    .phone{
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.875rem 1.5rem;
+      border-radius: var(--radius-sm);
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid var(--border);
+      text-decoration: none;
+      color: var(--charcoal);
+      font-weight: 700;
+      white-space: nowrap;
+      transition: all 0.3s ease;
+    }
+
+    .phone:hover {
+      background: rgba(212, 175, 55, 0.15);
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    /* Burger Menu */
+    .burger{
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1001;
+    }
+
+    .burger span{
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      background: var(--charcoal);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .burger span:nth-child(1){ top: 15px; }
+    .burger span:nth-child(2){ top: 21px; }
+    .burger span:nth-child(3){ top: 27px; }
+
+    .burger[aria-expanded="true"] span:nth-child(1){ 
+      top: 21px; 
+      transform: rotate(45deg); 
+    }
+    .burger[aria-expanded="true"] span:nth-child(2){ 
+      opacity: 0; 
+    }
+    .burger[aria-expanded="true"] span:nth-child(3){ 
+      top: 21px; 
+      transform: rotate(-45deg); 
+    }
+
+    /* Mobile Drawer */
     .drawer{
-      display:none;
+      display: none;
       position: fixed;
       inset: var(--navH) 0 0 0;
-      background: rgba(255, 236, 150, .78);
-      backdrop-filter: blur(14px);
-      border-top: 1px solid rgba(17,17,17,.10);
-      padding: 18px var(--pad);
-      transform: translateY(-8px);
+      background: rgba(248, 245, 240, 0.98);
+      backdrop-filter: blur(20px);
+      border-top: 1px solid var(--border);
+      padding: 2rem var(--pad);
+      transform: translateY(-100%);
       opacity: 0;
-      transition: opacity .18s ease, transform .18s ease;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       z-index: 999;
+      overflow-y: auto;
     }
-    .drawer.open{ opacity: 1; transform: translateY(0); }
-    .drawer a{
-      display:block;
-      padding: 14px 12px;
-      border-radius: 12px;
-      text-decoration:none;
-      color: var(--text);
-      font-weight: 900;
-      background: rgba(255,255,255,.70);
-      border: 1px solid rgba(17,17,17,.12);
-      box-shadow: 0 10px 22px rgba(17,17,17,.06);
-    }
-    .drawer a + a{ margin-top: 10px; }
 
-    /* Hero */
+    .drawer.open{
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .drawer a{
+      display: block;
+      padding: 1rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      color: var(--charcoal);
+      font-weight: 600;
+      font-size: 1.1rem;
+      border: 1px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .drawer a:hover{
+      background: rgba(212, 175, 55, 0.08);
+      border-color: var(--border);
+      transform: translateX(5px);
+    }
+
+    /* Hero Section */
     .hero{
       min-height: calc(100svh - var(--navH));
-      display:grid;
-      place-items:center;
-      padding: 34px 0 42px;
+      display: flex;
+      align-items: center;
+      padding: 4rem 0;
       position: relative;
-      overflow:hidden;
+      overflow: hidden;
     }
+
     .hero::before{
-      content:"";
-      position:absolute; inset:0;
-      background:
-        radial-gradient(1200px 520px at 18% 10%, rgba(247,198,0,.40), transparent 62%),
-        radial-gradient(900px 520px at 82% 20%, rgba(255,222,89,.34), transparent 64%),
-        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
-        url("assets/hero.jpg");
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse at 20% 20%, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 30%, rgba(139, 115, 85, 0.1) 0%, transparent 50%),
+        linear-gradient(to bottom, rgba(26, 26, 26, 0.3), rgba(26, 26, 26, 0.6)),
+        url('assets/hero.jpg');
       background-size: cover;
       background-position: center;
-      filter: saturate(1.05);
-      transform: scale(1.03);
-      z-index:-1;
+      background-attachment: fixed;
+      z-index: -1;
+      filter: brightness(0.9) contrast(1.1);
     }
 
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 28px;
-      align-items:center;
+    .hero-content{
+      max-width: 700px;
+      position: relative;
+      z-index: 2;
     }
+
     .hero h1{
-      font-size: clamp(32px, 4vw, 56px);
-      line-height: 1.05;
-      margin: 0;
-      letter-spacing: -0.5px;
-      color: rgba(255,255,255,.95);
+      margin-bottom: 1.5rem;
+      color: white;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     }
-    .hero p{
-      margin: 14px 0 0;
-      font-size: clamp(16px, 1.4vw, 19px);
-      color: rgba(255,255,255,.86);
-    }
-    .hero-actions{ display:flex; gap: 12px; flex-wrap:wrap; margin-top: 22px; }
 
-    .hero-card{
-      background: rgba(255,255,255,.10);
-      border: 1px solid rgba(255,255,255,.18);
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: 0 22px 60px rgba(0,0,0,.28);
-      backdrop-filter: blur(12px);
+    .hero .lead{
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 2.5rem;
+      font-size: 1.25rem;
     }
-    .hero-points{ display:grid; gap: 12px; margin-top: 14px; }
 
-    .point{
-      display:flex; gap: 12px; align-items:flex-start;
-      padding: 12px 12px;
-      border-radius: 14px;
-      background: rgba(0,0,0,.18);
-      border: 1px solid rgba(255,255,255,.14);
+    .hero-features{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
     }
-    .dot{
-      width: 10px; height: 10px; border-radius: 999px;
-      background: linear-gradient(135deg, var(--brand), var(--brand-2));
-      box-shadow: 0 8px 16px rgba(247,198,0,.30);
-      margin-top: 5px;
-      flex: 0 0 auto;
+
+    .feature{
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-sm);
+      backdrop-filter: blur(10px);
     }
-    .point strong{ display:block; margin-bottom: 2px; color:#fff; }
-    .point span{ color: rgba(255,255,255,.82); font-weight: 650; font-size: 14px; }
+
+    .feature-icon{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .feature-icon svg{
+      width: 20px;
+      height: 20px;
+      fill: white;
+    }
+
+    .feature-text{
+      color: white;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
 
     /* Sections */
-    section{ padding: 64px 0; }
-    .title{
-      display:flex; flex-direction:column; gap: 10px;
-      margin-bottom: 28px;
+    section{
+      padding: 6rem 0;
+      position: relative;
     }
-    .title h2{
-      margin:0;
-      font-size: clamp(24px, 2.5vw, 36px);
-      letter-spacing: -0.3px;
-    }
-    .title p{ margin:0; color: var(--muted); font-weight: 700; }
 
-    /* Cards / grids */
-    .grid-4{
-      display:grid;
-      grid-template-columns: repeat(4, minmax(0,1fr));
-      gap: 16px;
+    .section-title{
+      text-align: center;
+      margin-bottom: 4rem;
+      position: relative;
     }
+
+    .section-title::after{
+      content: '';
+      position: absolute;
+      bottom: -1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(to right, var(--gold), var(--gold-dark));
+      border-radius: 2px;
+    }
+
+    .section-subtitle{
+      color: var(--text-light);
+      font-size: 1.125rem;
+      margin-top: 1rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Cards */
     .card{
-      background: rgba(255,255,255,.78);
-      border: 1px solid rgba(17,17,17,.12);
+      background: var(--surface-2);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 18px;
+      padding: 2rem;
       box-shadow: var(--shadow);
-    }
-    .card h3{ margin: 8px 0 6px; font-size: 18px; }
-    .card p{ margin:0; color: var(--muted); font-weight: 700; }
-
-    .icon{
-      width: 44px; height: 44px;
-      border-radius: 14px;
-      display:grid; place-items:center;
-      background: rgba(247,198,0,.22);
-      border: 1px solid rgba(17,17,17,.12);
-      font-size: 22px;
+      transition: all 0.4s ease;
+      height: 100%;
     }
 
-    /* Categories */
-    .grid-3{
-      display:grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 16px;
+    .card:hover{
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-heavy);
+      border-color: var(--gold);
     }
-    .media{
-      position:relative;
+
+    .card-icon{
+      width: 60px;
+      height: 60px;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.2));
+      border: 1px solid var(--border);
+      display: grid;
+      place-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-icon svg{
+      width: 28px;
+      height: 28px;
+      fill: var(--gold-dark);
+    }
+
+    .card h3{
+      margin-bottom: 0.75rem;
+    }
+
+    .card p{
+      color: var(--text-light);
+      margin-bottom: 1rem;
+    }
+
+    /* Product Gallery */
+    .product-grid{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-card{
+      position: relative;
       border-radius: var(--radius);
-      overflow:hidden;
-      min-height: 320px;
-      border: 1px solid rgba(17,17,17,.10);
+      overflow: hidden;
+      aspect-ratio: 4/3;
       box-shadow: var(--shadow);
-      background: rgba(255,255,255,.45);
     }
-    .media img{
-      width:100%; height:100%;
+
+    .product-card img{
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      display:block;
-      transform: scale(1.02);
-      transition: transform .35s ease;
+      transition: transform 0.6s ease;
     }
-    .media:hover img{ transform: scale(1.08); }
-    .media .overlay{
-      position:absolute; inset:auto 0 0 0;
-      padding: 16px;
-      background: linear-gradient(to top, rgba(0,0,0,.80), rgba(0,0,0,.10));
-    }
-    .media h3{ margin:0; font-size: 20px; color:#fff; }
-    .media p{ margin: 6px 0 0; color: rgba(255,255,255,.88); font-weight: 650; }
 
-    /* Pricing: cards (без “погонный”) */
-    .price-grid{
-      display:grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 16px;
-      margin-top: 14px;
+    .product-card:hover img{
+      transform: scale(1.1);
     }
-    .price-card{
-      background: rgba(255,255,255,.86);
-      border: 1px solid rgba(17,17,17,.12);
+
+    .product-overlay{
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26, 26, 26, 0.85) 0%, transparent 50%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 2rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .product-card:hover .product-overlay{
+      opacity: 1;
+    }
+
+    .product-overlay h3{
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-overlay p{
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.95rem;
+    }
+
+    /* Pricing */
+    .pricing-grid{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .pricing-card{
+      background: var(--surface-2);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: var(--shadow);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
     }
-    .price-top{
-      display:flex; align-items:center; justify-content:space-between;
-      gap: 12px;
+
+    .pricing-card.featured{
+      border-color: var(--gold);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-heavy);
     }
-    .badge{
-      display:inline-flex; align-items:center; gap:8px;
-      padding: 7px 10px;
-      border-radius: 999px;
-      background: rgba(247,198,0,.22);
-      border: 1px solid rgba(17,17,17,.10);
-      font-weight: 900;
-      font-size: 12px;
-      color: rgba(17,17,17,.90);
-      white-space:nowrap;
-    }
-    .price-card h3{ margin: 10px 0 6px; font-size: 18px; }
-    .price{
-      font-size: 30px;
-      font-weight: 950;
-      letter-spacing: -.3px;
-      margin-top: 8px;
-    }
-    .per{
-      color: var(--muted);
-      font-weight: 800;
-      margin-top: 2px;
-    }
-    .hint{
-      color: var(--muted);
+
+    .pricing-badge{
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--charcoal);
+      padding: 0.5rem 1.5rem;
+      border-radius: 100px;
       font-weight: 700;
-      margin-top: 10px;
-      font-size: 14px;
+      font-size: 0.875rem;
     }
 
-    /* Table (optional оставил — можно удалить если не надо) */
-    .table-wrap{
-      overflow:auto;
-      border-radius: var(--radius);
-      border: 1px solid rgba(17,17,17,.12);
-      background: rgba(255,255,255,.86);
-      box-shadow: var(--shadow);
-      margin-top: 18px;
+    .price{
+      font-family: var(--font-heading);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      margin: 1.5rem 0;
     }
-    table{
-      width:100%;
-      border-collapse: collapse;
-      min-width: 720px;
+
+    .price span{
+      font-size: 1rem;
+      color: var(--muted);
+      font-weight: 600;
     }
-    th, td{
-      padding: 14px 16px;
-      text-align:left;
-      border-bottom: 1px solid rgba(17,17,17,.10);
-      font-weight: 750;
+
+    .pricing-features{
+      list-style: none;
+      padding: 0;
+      margin: 2rem 0;
     }
-    th{
-      background: rgba(247,198,0,.18);
-      position: sticky; top: 0;
-      z-index: 1;
+
+    .pricing-features li{
+      padding: 0.5rem 0;
+      color: var(--text-light);
+      border-bottom: 1px solid var(--border);
     }
-    tr:hover td{ background: rgba(17,17,17,.03); }
+
+    .pricing-features li:last-child{
+      border-bottom: none;
+    }
 
     /* Form */
-    .form{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      background: rgba(255,255,255,.86);
-      border: 1px solid rgba(17,17,17,.12);
+    .contact-form{
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 18px;
+      padding: 3rem;
       box-shadow: var(--shadow);
     }
-    .field{ display:flex; flex-direction:column; gap: 8px; }
-    .field label{ font-weight: 950; }
-    input, select, textarea{
-      width:100%;
-      padding: 12px 12px;
-      border-radius: 12px;
-      border: 1px solid rgba(17,17,17,.14);
-      background: rgba(255,255,255,.90);
-      color: rgba(17,17,17,.92);
-      font-size: 16px;
-      outline: none;
+
+    .form-grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
     }
-    textarea{ min-height: 140px; resize: vertical; }
-    .form .full{ grid-column: 1 / -1; }
-    .note{ font-size: 13px; color: var(--muted); margin-top: 6px; font-weight: 700; }
-    .honeypot{ display:none !important; }
+
+    .form-group{
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-group label{
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+
+    .form-control{
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--bg);
+      color: var(--charcoal);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus{
+      border-color: var(--gold);
+      box-shadow: var(--shadow-gold);
+    }
+
+    .form-group.full{
+      grid-column: 1 / -1;
+    }
+
+    textarea.form-control{
+      min-height: 150px;
+      resize: vertical;
+    }
 
     /* Footer */
     footer{
-      padding: 52px 0 28px;
-      border-top: 1px solid rgba(17,17,17,.10);
-      background: rgba(255,255,255,.55);
-    }
-    .footer-grid{
-      display:grid;
-      grid-template-columns: 1.3fr 1fr 1fr;
-      gap: 18px;
-    }
-    footer h3{ margin:0 0 10px; }
-    footer a{ color: var(--text); text-decoration:none; opacity:.92; font-weight: 800; }
-    footer a:hover{ opacity: 1; }
-    .copyright{
-      margin-top: 22px;
-      padding-top: 18px;
-      border-top: 1px solid rgba(17,17,17,.10);
-      color: var(--muted);
-      font-weight: 800;
-      font-size: 14px;
-      display:flex; justify-content:space-between; gap: 12px; flex-wrap:wrap;
+      background: var(--charcoal);
+      color: rgba(255, 255, 255, 0.9);
+      padding: 4rem 0 2rem;
     }
 
-    /* Floating WhatsApp */
+    .footer-grid{
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-logo .brand-name{
+      background: linear-gradient(to right, var(--gold), var(--gold-light));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .footer-about{
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 1rem;
+      line-height: 1.6;
+    }
+
+    .footer-title{
+      color: white;
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links{
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-links a{
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer-links a:hover{
+      color: var(--gold);
+      transform: translateX(5px);
+    }
+
+    .copyright{
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.875rem;
+    }
+
+    /* WhatsApp Fab */
     .wa-fab{
       position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 2000;
-      width: 62px;
-      height: 62px;
-      border-radius: 999px;
-      background: #25D366;
-      box-shadow: 0 18px 42px rgba(17,17,17,.28);
-      display:grid;
-      place-items:center;
-      text-decoration:none;
-      transform: translateZ(0);
-      transition: transform .18s ease, filter .18s ease;
-      animation: waPulse 2.1s infinite;
+      right: 2rem;
+      bottom: 2rem;
+      z-index: 1000;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      box-shadow: var(--shadow-heavy);
+      display: grid;
+      place-items: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      animation: float 3s ease-in-out infinite;
     }
-    .wa-fab:hover{ transform: translateY(-2px); filter: brightness(1.02); }
-    .wa-fab:active{ transform: translateY(0); }
 
-    .wa-fab svg{ width: 30px; height: 30px; fill: #fff; }
+    .wa-fab:hover{
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0 20px 40px rgba(37, 211, 102, 0.3);
+    }
 
-    @keyframes waPulse{
-      0%   { box-shadow: 0 0 0 0 rgba(37,211,102,.45), 0 18px 42px rgba(17,17,17,.28); }
-      70%  { box-shadow: 0 0 0 18px rgba(37,211,102,0), 0 18px 42px rgba(17,17,17,.28); }
-      100% { box-shadow: 0 0 0 0 rgba(37,211,102,0), 0 18px 42px rgba(17,17,17,.28); }
+    .wa-fab svg{
+      width: 28px;
+      height: 28px;
+      fill: white;
+    }
+
+    @keyframes float{
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
 
     /* Responsive */
-    @media (max-width: 980px){
-      .hero-grid{ grid-template-columns: 1fr; }
-      .grid-4{ grid-template-columns: repeat(2, minmax(0,1fr)); }
-      .grid-3{ grid-template-columns: 1fr; }
-      .footer-grid{ grid-template-columns: 1fr; }
-      .price-grid{ grid-template-columns: 1fr; }
-      table{ min-width: 640px; }
+    @media (max-width: 1024px){
+      .grid-4{ grid-template-columns: repeat(2, 1fr); }
+      .footer-grid{ grid-template-columns: 1fr 1fr; }
+      .hero-features{ grid-template-columns: 1fr; }
     }
+
     @media (max-width: 768px){
-      .navlinks{ display:none; }
-      .burger{ display:flex; }
-      .drawer{ display:block; }
-      .form{ grid-template-columns: 1fr; }
-      .brand-name{ font-size: 16px; }
-      .brand-logo{ width: 42px; height: 42px; }
+      .navlinks{ display: none; }
+      .burger{ display: flex; }
+      .drawer{ display: block; }
+      .grid-2, .grid-3, .grid-4{ grid-template-columns: 1fr; }
+      .form-grid{ grid-template-columns: 1fr; }
+      .footer-grid{ grid-template-columns: 1fr; }
+      .nav{ gap: 1rem; }
+      .hero h1{ font-size: 2.5rem; }
+      section{ padding: 4rem 0; }
+      .contact-form{ padding: 2rem; }
     }
-    @media (max-width: 520px){
-      .phone{ display:none; } /* чтобы не мешало на совсем маленьких экранах */
-      .wa-fab{ width: 56px; height: 56px; right: 14px; bottom: 14px; }
-      .wa-fab svg{ width: 28px; height: 28px; }
+
+    @media (max-width: 480px){
+      .hero .lead{ font-size: 1.125rem; }
+      .chip{ padding: 0.5rem 1rem; font-size: 0.75rem; }
+      .btn{ padding: 1rem 2rem; }
+      .wa-fab{ 
+        width: 56px; 
+        height: 56px; 
+        right: 1rem; 
+        bottom: 1rem; 
+      }
     }
 
     @media (prefers-reduced-motion: reduce){
-      html{ scroll-behavior:auto; }
-      *{ transition:none !important; animation:none !important; }
-      .media img{ transform:none !important; }
+      * { 
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
     }
   </style>
 
-  <!-- Schema.org (LocalBusiness) -->
+  <!-- Icons (SVG) -->
+  <svg style="display: none;">
+    <symbol id="icon-measure" viewBox="0 0 24 24">
+      <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
+    </symbol>
+    <symbol id="icon-design" viewBox="0 0 24 24">
+      <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+    </symbol>
+    <symbol id="icon-time" viewBox="0 0 24 24">
+      <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+    </symbol>
+    <symbol id="icon-warranty" viewBox="0 0 24 24">
+      <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+    </symbol>
+    <symbol id="icon-quality" viewBox="0 0 24 24">
+      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+    </symbol>
+    <symbol id="icon-custom" viewBox="0 0 24 24">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+    </symbol>
+  </svg>
+
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "BAI GROUP",
-    "description": "Производство корпусной мебели в Актобе: кухни, шкафы-купе, гардеробные, тумбы, офисная мебель.",
+    "description": "Эксклюзивная корпусная мебель премиум-класса в Актобе",
     "telephone": "+7-706-417-05-44",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Актобе",
       "addressCountry": "KZ"
     },
-    "areaServed": "Актобе",
+    "areaServed": "Актобе и регион",
+    "priceRange": "$$$",
     "url": "https://example.com/"
   }
   </script>
@@ -577,25 +929,26 @@
   <header class="navbar" role="banner">
     <div class="container">
       <div class="nav">
-        <!-- LOGO PLACE -->
+        <!-- Logo -->
         <a class="brand" href="#top" aria-label="BAI GROUP — на главную">
           <span class="brand-logo" aria-hidden="true">
-            <!-- Вставь ваш логотип сюда -->
-            <img src="assets/logo.jpg" alt="BAI GROUP logo" onerror="this.style.display='none'">
+            <img src="assets/logo.jpg" alt="BAI GROUP" onerror="this.style.display='none'">
           </span>
           <span class="brand-name">BAI GROUP</span>
         </a>
 
         <nav class="navlinks" aria-label="Основная навигация">
-          <a href="#about">О нас</a>
-          <a href="#categories">Категории</a>
+          <a href="#about">О компании</a>
           <a href="#advantages">Преимущества</a>
-          <a href="#prices">Цены</a>
-          <a href="#contact">Контакты</a>
+          <a href="#products">Проекты</a>
+          <a href="#pricing">Стоимость</a>
+          <a href="#contact">Консультация</a>
         </nav>
 
         <div class="nav-cta">
-          <a class="phone" href="tel:+77064170544" aria-label="Позвонить в BAI GROUP: +7 706 417 05 44">📞 +7 (706) 417 05 44</a>
+          <a class="phone" href="tel:+77064170544" aria-label="Позвонить: +7 706 417 05 44">
+            <span>+7 (706) 417-05-44</span>
+          </a>
 
           <button class="burger" id="burger"
                   aria-label="Открыть меню"
@@ -611,12 +964,12 @@
   <!-- Mobile Drawer -->
   <div class="drawer" id="drawer" hidden>
     <div class="container stack" aria-label="Мобильное меню">
-      <a href="#about">О нас</a>
-      <a href="#categories">Категории</a>
-      <a href="#advantages">Преимущества</a>
-      <a href="#prices">Цены</a>
-      <a href="#contact">Контакты</a>
-      <a href="tel:+77064170544" class="btn" style="text-align:center;">Позвонить</a>
+      <a href="#about">О компании</a>
+      <a href="#advantages">Наши преимущества</a>
+      <a href="#products">Реализованные проекты</a>
+      <a href="#pricing">Стоимость</a>
+      <a href="#contact">Заказать консультацию</a>
+      <a href="tel:+77064170544" class="btn">Позвонить сейчас</a>
     </div>
   </div>
 
@@ -624,370 +977,7 @@
   <main id="top">
     <section class="hero" aria-label="Главный экран">
       <div class="container">
-        <div class="hero-grid">
-          <div class="stack">
-            <span class="chip">📍 Актобе • Корпусная мебель на заказ</span>
-            <h1>Корпусная мебель BAI GROUP: кухни, шкафы, гардеробные</h1>
-            <p>Производим корпусную мебель под размеры вашего помещения. Замер и 3D-проект, аккуратная установка, гарантия 2 года.</p>
-
-            <div class="hero-actions">
-              <a class="btn" href="#contact">Рассчитать стоимость</a>
-              <a class="btn secondary" href="#categories">Смотреть работы</a>
-            </div>
-
-            <p class="muted" style="margin-top:10px;font-weight:800;">
-              Специализация: кухни • тумбы • гардеробные • офисная мебель (без мягкой мебели)
-            </p>
-          </div>
-
-          <aside class="hero-card" aria-label="Коротко о сервисе">
-            <div class="hero-points">
-              <div class="point">
-                <span class="dot" aria-hidden="true"></span>
-                <div>
-                  <strong>Бесплатный замер</strong>
-                  <span>Приезжаем, уточняем размеры, обсуждаем материалы.</span>
-                </div>
-              </div>
-              <div class="point">
-                <span class="dot" aria-hidden="true"></span>
-                <div>
-                  <strong>3D-проект</strong>
-                  <span>Покажем, как будет выглядеть мебель до производства.</span>
-                </div>
-              </div>
-              <div class="point">
-                <span class="dot" aria-hidden="true"></span>
-                <div>
-                  <strong>Сроки под контролем</strong>
-                  <span>Фиксируем этапы и держим связь до установки.</span>
-                </div>
-              </div>
-              <div class="point">
-                <span class="dot" aria-hidden="true"></span>
-                <div>
-                  <strong>Гарантия 2 года</strong>
-                  <span>По договору. Надёжная фурнитура и сборка.</span>
-                </div>
-              </div>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="about">
-      <div class="container">
-        <div class="title">
-          <h2>О компании BAI GROUP</h2>
-          <p>Фокус на корпусной мебели — в этом мы сильнее всего.</p>
-        </div>
-
-        <div class="card">
-          <p style="margin:0;font-weight:800;color:var(--muted);">
-            Мы проектируем и производим корпусную мебель, которая служит годами: кухни, шкафы-купе, гардеробные,
-            тумбы и офисные решения. Мы не занимаемся мягкой мебелью — делаем прочные конструкции, точную геометрию
-            и удобную эргономику.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Advantages -->
-    <section id="advantages">
-      <div class="container">
-        <div class="title">
-          <h2>Преимущества</h2>
-          <p>Сервис и качество, за которые нас выбирают.</p>
-        </div>
-
-        <div class="grid-4">
-          <article class="card">
-            <div class="icon" aria-hidden="true">🔨</div>
-            <h3>Прочность</h3>
-            <p>Качественные материалы, фурнитура, аккуратный монтаж.</p>
-          </article>
-          <article class="card">
-            <div class="icon" aria-hidden="true">📐</div>
-            <h3>Индивидуально</h3>
-            <p>Замер + 3D-проект, под размеры и задачи помещения.</p>
-          </article>
-          <article class="card">
-            <div class="icon" aria-hidden="true">⏱️</div>
-            <h3>Сроки</h3>
-            <p>Планируем этапы, держим в курсе готовности.</p>
-          </article>
-          <article class="card">
-            <div class="icon" aria-hidden="true">🛡️</div>
-            <h3>Гарантия 2 года</h3>
-            <p>По договору. Поддержка после установки.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Categories -->
-    <section id="categories">
-      <div class="container">
-        <div class="title">
-          <h2>Наша продукция</h2>
-          <p>Ключевые направления, которые делаем чаще всего.</p>
-        </div>
-
-        <div class="grid-3">
-          <article class="media">
-            <img
-              src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=80"
-              alt="Кухонные шкафы и гарнитуры"
-              loading="lazy" decoding="async" />
-            <div class="overlay">
-              <h3>Кухни</h3>
-              <p>Гарнитуры, модули, пеналы, встроенные решения.</p>
-            </div>
-          </article>
-
-          <article class="media">
-            <img
-              src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80"
-              alt="Гардеробные системы и шкафы"
-              loading="lazy" decoding="async" />
-            <div class="overlay">
-              <h3>Шкафы и гардеробные</h3>
-              <p>Системы хранения под вашу планировку.</p>
-            </div>
-          </article>
-
-          <article class="media">
-            <img
-              src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80"
-              alt="Офисная мебель"
-              loading="lazy" decoding="async" />
-            <div class="overlay">
-              <h3>Офисная мебель</h3>
-              <p>Шкафы, полки, тумбы, рабочие места.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Prices -->
-    <section id="prices">
-      <div class="container">
-        <div class="title">
-          <h2>Цены на кухню</h2>
-          <p>Ориентировочно за 1 м кухни. Итог зависит от комплектации, фурнитуры и размеров.</p>
-        </div>
-
-        <!-- Cards: цены за 1 м кухни -->
-        <div class="price-grid" aria-label="Цены за 1 метр кухни">
-          <div class="price-card">
-            <div class="price-top">
-              <div class="badge">Базовый</div>
-              <div class="icon" aria-hidden="true">🧱</div>
-            </div>
-            <h3>ЛДСП</h3>
-            <div class="price">140 000 ₸</div>
-            <div class="per">за 1 м кухни</div>
-            <div class="hint">Практичный вариант для большинства проектов.</div>
-          </div>
-
-          <div class="price-card">
-            <div class="price-top">
-              <div class="badge">Оптимальный</div>
-              <div class="icon" aria-hidden="true">🎞️</div>
-            </div>
-            <h3>МДФ плёнка</h3>
-            <div class="price">160 000 ₸</div>
-            <div class="per">за 1 м кухни</div>
-            <div class="hint">Хороший баланс внешнего вида и цены.</div>
-          </div>
-
-          <div class="price-card">
-            <div class="price-top">
-              <div class="badge">Премиум</div>
-              <div class="icon" aria-hidden="true">🎨</div>
-            </div>
-            <h3>МДФ краска</h3>
-            <div class="price">190 000 ₸</div>
-            <div class="per">за 1 м кухни</div>
-            <div class="hint">Максимальная эстетика и качество отделки.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-      <div class="container">
-        <div class="title">
-          <h2>Свяжитесь с нами</h2>
-          <p>Оставьте заявку — рассчитаем стоимость и предложим варианты.</p>
-        </div>
-
-        <form class="form" id="contactForm" novalidate>
-          <div class="field">
-            <label for="name">Ваше имя <span aria-hidden="true">*</span></label>
-            <input id="name" name="name" type="text" autocomplete="name" required minlength="2"
-                   placeholder="Например, Айгүл" />
-          </div>
-
-          <div class="field">
-            <label for="phone">Телефон <span aria-hidden="true">*</span></label>
-            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required
-                   placeholder="+7 706 417 05 44" />
-          </div>
-
-          <div class="field full">
-            <label for="category">Тип мебели</label>
-            <select id="category" name="category">
-              <option value="kitchen">Кухня</option>
-              <option value="wardrobe">Шкаф / гардеробная</option>
-              <option value="office">Офисная мебель</option>
-              <option value="other">Другое</option>
-            </select>
-          </div>
-
-          <div class="field full">
-            <label for="message">Пожелания</label>
-            <textarea id="message" name="message" placeholder="Размеры (если знаете), материалы, фото/референсы, сроки..."></textarea>
-            <div class="note">Совет: добавьте примерные размеры и пожелания по материалу/фурнитуре — так расчёт будет точнее.</div>
-          </div>
-
-          <div class="honeypot">
-            <label>Оставьте поле пустым</label>
-            <input type="text" name="company" tabindex="-1" autocomplete="off" />
-          </div>
-
-          <div class="field full">
-            <button class="btn" type="submit">Отправить заявку</button>
-            <div class="note">Нажимая «Отправить», вы соглашаетесь на обработку данных для связи по заявке.</div>
-          </div>
-
-          <output class="field full" id="formStatus" role="status" aria-live="polite" style="margin-top:-6px;"></output>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer role="contentinfo">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <h3>BAI GROUP</h3>
-          <p class="muted" style="margin:0;font-weight:800;">Корпусная мебель на заказ в Актобе</p>
-          <p class="muted" style="margin:12px 0 0;font-weight:800;">
-            Специализация: кухни, шкафы, гардеробные, офисная мебель
-          </p>
-        </div>
-
-        <div>
-          <h3>Контакты</h3>
-          <p style="margin:0 0 10px;"><a href="tel:+77064170544">📞 +7 (706) 417 05 44</a></p>
-          <p class="muted" style="margin:0;font-weight:800;">📍 г. Актобе</p>
-          <p class="muted" style="margin:10px 0 0;font-weight:800;">
-            Пн-Пт: 10:00-19:00<br/>Сб: 10:00-13:00<br/>Вс: выходной
-          </p>
-        </div>
-
-        <div>
-          <h3>Навигация</h3>
-          <div class="stack" style="gap:10px;">
-            <a href="#about">О компании</a>
-            <a href="#categories">Категории</a>
-            <a href="#advantages">Преимущества</a>
-            <a href="#prices">Цены</a>
-            <a href="#contact">Расчёт стоимости</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="copyright">
-        <span>© BAI GROUP 2025 — Актобе</span>
-        <span class="muted">Сайт: быстрый, адаптивный, удобный</span>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Floating WhatsApp -->
-  <a class="wa-fab"
-     href="https://wa.me/77064170544?text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7%20BAI%20GROUP!%20%D0%9A%D1%83%D1%85%D0%BD%D1%8F%D2%93%D0%B0%20%D0%B5%D1%81%D0%B5%D0%BF%D1%82%D0%B5%D1%83%20%D0%BA%D0%B5%D1%80%D0%B5%D0%BA%20%D0%B5%D0%B4%D1%96."
-     target="_blank" rel="noopener"
-     aria-label="Написать в WhatsApp">
-    <!-- WhatsApp icon (inline SVG) -->
-    <svg viewBox="0 0 32 32" aria-hidden="true">
-      <path d="M19.11 17.44c-.28-.14-1.64-.81-1.9-.9-.25-.1-.44-.14-.62.14-.18.28-.71.9-.87 1.08-.16.18-.32.21-.6.07-.28-.14-1.17-.43-2.22-1.38-.82-.73-1.37-1.63-1.53-1.9-.16-.28-.02-.43.12-.57.12-.12.28-.32.41-.48.14-.16.18-.28.28-.46.09-.18.05-.35-.02-.49-.07-.14-.62-1.5-.85-2.05-.22-.54-.45-.47-.62-.47h-.53c-.18 0-.49.07-.74.35-.25.28-.97.95-.97 2.32 0 1.37 1 2.69 1.14 2.88.14.18 1.98 3.03 4.8 4.25.67.29 1.2.46 1.61.59.68.22 1.3.19 1.79.12.55-.08 1.64-.67 1.87-1.31.23-.64.23-1.19.16-1.31-.07-.12-.25-.19-.53-.33zM16.02 3C9.39 3 4 8.38 4 15c0 2.34.67 4.53 1.84 6.39L4.65 29 12.5 27.9c1.77.97 3.81 1.52 5.95 1.52C25.07 29.42 30 24.05 30 17.43 30 10.8 22.65 3 16.02 3zm0 23.5c-2.02 0-3.88-.6-5.45-1.62l-.39-.25-4.66.65.76-4.54-.26-.41A10.33 10.33 0 0 1 5.7 15c0-5.71 4.62-10.35 10.32-10.35 5.7 0 10.32 4.64 10.32 10.35 0 5.71-4.62 10.35-10.32 10.35z"/>
-    </svg>
-  </a>
-
-  <script>
-    // Mobile menu (a11y)
-    const burger = document.getElementById('burger');
-    const drawer = document.getElementById('drawer');
-
-    function setDrawer(open){
-      burger.setAttribute('aria-expanded', String(open));
-      drawer.hidden = !open;
-      drawer.classList.toggle('open', open);
-      document.documentElement.style.overflow = open ? 'hidden' : '';
-    }
-
-    burger.addEventListener('click', () => {
-      const isOpen = burger.getAttribute('aria-expanded') === 'true';
-      setDrawer(!isOpen);
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if(e.key === 'Escape' && burger.getAttribute('aria-expanded') === 'true'){
-        setDrawer(false);
-        burger.focus();
-      }
-    });
-
-    drawer.addEventListener('click', (e) => {
-      if(e.target.closest('a')) setDrawer(false);
-    });
-
-    document.addEventListener('click', (e) => {
-      const isOpen = burger.getAttribute('aria-expanded') === 'true';
-      if(!isOpen) return;
-      const inside = e.target.closest('#drawer') || e.target.closest('#burger');
-      if(!inside) setDrawer(false);
-    });
-
-    // Form handling (demo)
-    const form = document.getElementById('contactForm');
-    const status = document.getElementById('formStatus');
-
-    function validatePhone(value){
-      const digits = (value || '').replace(/\D/g, '');
-      return digits.length >= 10;
-    }
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      status.textContent = '';
-
-      const data = new FormData(form);
-      if ((data.get('company') || '').trim().length > 0) return;
-
-      const name = (data.get('name') || '').trim();
-      const phone = (data.get('phone') || '').trim();
-
-      if(name.length < 2){
-        status.textContent = 'Пожалуйста, укажите имя (минимум 2 символа).';
-        return;
-      }
-      if(!validatePhone(phone)){
-        status.textContent = 'Пожалуйста, укажите корректный телефон.';
-        return;
-      }
-
-      status.textContent = 'Заявка отправлена! Мы свяжемся с вами в ближайшее время.';
-      form.reset();
-    });
-  </script>
-</body>
-</html>
+        <div class="hero-content">
+          <span class="chip">Премиальная корпусная мебель в Актобе</span>
+          <h1>Авторские решения для вашего пространства</h1>
+          <p class="lead">Создаём эксклюзивные кухни, гардеробные системы и

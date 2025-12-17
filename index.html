@@ -3,10 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="color-scheme" content="light dark" />
 
   <title>BAI GROUP — Корпусная мебель в Актобе | Кухни, шкафы, гардеробные на заказ</title>
-  <meta name="description" content="Изготовление корпусной мебели в Актобе: кухонные гарнитуры, шкафы-купе, гардеробные, тумбы и офисная мебель. Бесплатный замер и 3D-проект, гарантия 2 года." />
+  <meta name="description" content="Изготовление корпусной мебели в Актобе: кухни, шкафы-купе, гардеробные, тумбы и офисная мебель. Бесплатный замер и 3D-проект, гарантия 2 года." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://example.com/" />
 
@@ -18,41 +17,38 @@
   <meta property="og:image" content="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1200&q=80" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Performance hints (CDN images) -->
   <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
   <link rel="dns-prefetch" href="https://images.unsplash.com">
-
-  <!-- Favicon (замени на свой) -->
   <link rel="icon" href="/favicon.ico" />
 
   <style>
     :root{
-      --bg: #0b1220;
-      --surface: rgba(255,255,255,.06);
-      --surface-2: rgba(255,255,255,.10);
-      --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.72);
-      --brand: #4aa3ff;
-      --brand-2: #2f77ff;
-      --shadow: 0 16px 48px rgba(0,0,0,.35);
-      --radius: 16px;
+      /* Brand / Yellow */
+      --brand: #F7C600;        /* основной жёлтый */
+      --brand-2: #FFDE59;      /* мягкий жёлтый */
+      --brand-ink: #111111;    /* текст на жёлтом */
+      --accent: #111111;       /* акцент (черный) */
+
+      /* Surfaces (light premium) */
+      --bg: #FFF7D6;           /* общий фон страницы */
+      --surface: rgba(255,255,255,.70);
+      --surface-2: rgba(255,255,255,.92);
+      --border: rgba(17,17,17,.12);
+      --text: rgba(17,17,17,.92);
+      --muted: rgba(17,17,17,.65);
+
+      --shadow: 0 18px 50px rgba(17,17,17,.14);
+      --shadow-soft: 0 10px 26px rgba(17,17,17,.10);
+
+      --radius: 18px;
       --radius-sm: 12px;
       --max: 1180px;
       --pad: 20px;
       --navH: 76px;
-      --ring: 0 0 0 3px rgba(74,163,255,.35);
-    }
-    @media (prefers-color-scheme: light){
-      :root{
-        --bg:#ffffff;
-        --surface:#f4f6f8;
-        --surface-2:#ffffff;
-        --text:#0c1220;
-        --muted:#49566a;
-        --shadow: 0 16px 48px rgba(15,23,42,.12);
-      }
+      --ring: 0 0 0 3px rgba(247,198,0,.35);
     }
 
+    /* RESET */
     *{ box-sizing:border-box; }
     html{ scroll-behavior:smooth; }
     body{
@@ -66,83 +62,100 @@
       padding-top: var(--navH);
     }
 
-    /* Focus */
-    :focus-visible{ outline: none; box-shadow: var(--ring); border-radius: 10px; }
+    :focus-visible{ outline:none; box-shadow: var(--ring); border-radius: 12px; }
 
-    /* Helpers */
     .container{ max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
     .stack{ display:flex; flex-direction:column; gap: 16px; }
     .muted{ color: var(--muted); }
-    .chip{
-      display:inline-flex; align-items:center; gap:8px;
-      padding: 8px 12px; border-radius: 999px;
-      background: var(--surface); border: 1px solid rgba(255,255,255,.12);
-      backdrop-filter: blur(10px);
-      font-weight: 600; font-size: 14px;
-    }
+
+    /* Buttons */
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
       padding: 14px 18px;
       border-radius: 12px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: linear-gradient(135deg, var(--brand), var(--brand-2));
-      color: #fff; text-decoration:none; font-weight:800;
-      letter-spacing:.3px;
-      box-shadow: 0 14px 30px rgba(47,119,255,.28);
+      border: 1px solid rgba(17,17,17,.14);
+      background: linear-gradient(135deg, var(--accent), #000);
+      color: #fff; text-decoration:none; font-weight:900;
+      letter-spacing:.2px;
+      box-shadow: var(--shadow-soft);
       transition: transform .18s ease, filter .18s ease, box-shadow .18s ease;
       will-change: transform;
     }
     .btn:hover{ transform: translateY(-1px); filter: brightness(1.02); }
-    .btn:active{ transform: translateY(0); box-shadow: 0 10px 18px rgba(47,119,255,.22); }
+    .btn:active{ transform: translateY(0); box-shadow: 0 8px 18px rgba(17,17,17,.16); }
+
     .btn.secondary{
       background: transparent;
-      border: 1px solid rgba(255,255,255,.18);
+      border: 1px solid rgba(17,17,17,.18);
       color: var(--text);
       box-shadow: none;
     }
-    .btn.secondary:hover{ background: rgba(255,255,255,.06); }
+    .btn.secondary:hover{ background: rgba(255,255,255,.55); }
+
+    /* Chip */
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 8px 12px; border-radius: 999px;
+      background: rgba(255,255,255,.70);
+      border: 1px solid var(--border);
+      font-weight: 800; font-size: 14px;
+      box-shadow: 0 10px 22px rgba(17,17,17,.06);
+    }
 
     /* Navbar */
     .navbar{
       position: fixed; inset: 0 0 auto 0; height: var(--navH);
-      background: rgba(10,16,28,.70);
-      border-bottom: 1px solid rgba(255,255,255,.10);
+      background: rgba(255, 236, 150, .65);
+      border-bottom: 1px solid rgba(17,17,17,.10);
       backdrop-filter: blur(14px);
       z-index: 1000;
-    }
-    @media (prefers-color-scheme: light){
-      .navbar{ background: rgba(255,255,255,.75); }
     }
     .nav{
       height: var(--navH);
       display:flex; align-items:center; justify-content:space-between;
       gap: 14px;
     }
+
+    /* Brand / logo */
     .brand{
-      display:flex; align-items:center; gap: 10px;
-      font-weight: 900;
-      letter-spacing:.4px;
+      display:flex; align-items:center; gap: 12px;
       text-decoration:none;
       color: var(--text);
       user-select:none;
       white-space:nowrap;
+      font-weight: 900;
+      letter-spacing:.3px;
     }
-    .brand .logo-mark{
-      width: 34px; height: 34px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, var(--brand), var(--brand-2));
-      box-shadow: 0 10px 22px rgba(47,119,255,.26);
+    .brand-logo{
+      width: 46px; height: 46px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.75);
+      border: 1px solid rgba(17,17,17,.12);
+      box-shadow: 0 10px 22px rgba(17,17,17,.10);
+      display:grid;
+      place-items:center;
+      overflow:hidden;
+      flex: 0 0 auto;
     }
+    .brand-logo img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 6px;
+    }
+    .brand-name{ font-size: 18px; }
+
     .navlinks{
       display:flex; align-items:center; gap: 18px;
     }
     .navlinks a{
       color: var(--text);
       text-decoration:none;
-      font-weight: 700;
-      opacity: .9;
+      font-weight: 850;
+      opacity: .92;
     }
-    .navlinks a:hover{ opacity:1; color: var(--brand); }
+    .navlinks a:hover{ opacity:1; }
+
     .nav-cta{
       display:flex; align-items:center; gap: 10px;
     }
@@ -150,25 +163,27 @@
       display:inline-flex; align-items:center; gap:10px;
       padding: 10px 14px;
       border-radius: 12px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(17,17,17,.14);
       text-decoration:none;
       color: var(--text);
-      font-weight: 800;
+      font-weight: 900;
       white-space:nowrap;
+      box-shadow: 0 10px 22px rgba(17,17,17,.08);
     }
-    .phone:hover{ border-color: rgba(74,163,255,.35); }
+    .phone:hover{ border-color: rgba(17,17,17,.22); }
 
     /* Burger */
     .burger{
       display:none;
       width: 44px; height: 44px;
       border-radius: 12px;
-      border: 1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(17,17,17,.16);
+      background: rgba(255,255,255,.70);
       cursor:pointer;
       align-items:center; justify-content:center;
       position: relative;
+      box-shadow: 0 10px 22px rgba(17,17,17,.08);
     }
     .burger span{
       position:absolute;
@@ -180,7 +195,6 @@
     .burger span:nth-child(1){ top: 16px; }
     .burger span:nth-child(2){ top: 21px; }
     .burger span:nth-child(3){ top: 26px; }
-
     .burger[aria-expanded="true"] span:nth-child(1){ top: 21px; transform: rotate(45deg); }
     .burger[aria-expanded="true"] span:nth-child(2){ opacity: 0; }
     .burger[aria-expanded="true"] span:nth-child(3){ top: 21px; transform: rotate(-45deg); }
@@ -190,9 +204,9 @@
       display:none;
       position: fixed;
       inset: var(--navH) 0 0 0;
-      background: rgba(10,16,28,.78);
+      background: rgba(255, 236, 150, .78);
       backdrop-filter: blur(14px);
-      border-top: 1px solid rgba(255,255,255,.10);
+      border-top: 1px solid rgba(17,17,17,.10);
       padding: 18px var(--pad);
       transform: translateY(-8px);
       opacity: 0;
@@ -206,12 +220,12 @@
       border-radius: 12px;
       text-decoration:none;
       color: var(--text);
-      font-weight: 800;
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.12);
+      font-weight: 900;
+      background: rgba(255,255,255,.70);
+      border: 1px solid rgba(17,17,17,.12);
+      box-shadow: 0 10px 22px rgba(17,17,17,.06);
     }
     .drawer a + a{ margin-top: 10px; }
-    .drawer a:hover{ border-color: rgba(74,163,255,.35); }
 
     /* Hero */
     .hero{
@@ -226,9 +240,9 @@
       content:"";
       position:absolute; inset:0;
       background:
-        radial-gradient(1200px 500px at 20% 15%, rgba(74,163,255,.22), transparent 60%),
-        radial-gradient(900px 500px at 80% 20%, rgba(47,119,255,.18), transparent 62%),
-        linear-gradient(rgba(0,0,0,.50), rgba(0,0,0,.55)),
+        radial-gradient(1200px 520px at 18% 10%, rgba(247,198,0,.40), transparent 62%),
+        radial-gradient(900px 520px at 82% 20%, rgba(255,222,89,.34), transparent 64%),
+        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
         url("https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=2000&q=80");
       background-size: cover;
       background-position: center;
@@ -236,6 +250,7 @@
       transform: scale(1.03);
       z-index:-1;
     }
+
     .hero-grid{
       display:grid;
       grid-template-columns: 1.1fr .9fr;
@@ -247,6 +262,7 @@
       line-height: 1.05;
       margin: 0;
       letter-spacing: -0.5px;
+      color: rgba(255,255,255,.95);
     }
     .hero p{
       margin: 14px 0 0;
@@ -254,34 +270,33 @@
       color: rgba(255,255,255,.86);
     }
     .hero-actions{ display:flex; gap: 12px; flex-wrap:wrap; margin-top: 22px; }
+
     .hero-card{
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.18);
       border-radius: var(--radius);
       padding: 18px;
-      box-shadow: var(--shadow);
+      box-shadow: 0 22px 60px rgba(0,0,0,.28);
       backdrop-filter: blur(12px);
     }
-    .hero-points{
-      display:grid; gap: 12px;
-      margin-top: 14px;
-    }
+    .hero-points{ display:grid; gap: 12px; margin-top: 14px; }
+
     .point{
       display:flex; gap: 12px; align-items:flex-start;
       padding: 12px 12px;
       border-radius: 14px;
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+      border: 1px solid rgba(255,255,255,.14);
     }
     .dot{
       width: 10px; height: 10px; border-radius: 999px;
       background: linear-gradient(135deg, var(--brand), var(--brand-2));
-      box-shadow: 0 8px 16px rgba(47,119,255,.25);
+      box-shadow: 0 8px 16px rgba(247,198,0,.30);
       margin-top: 5px;
       flex: 0 0 auto;
     }
-    .point strong{ display:block; margin-bottom: 2px; }
-    .point span{ color: rgba(255,255,255,.78); font-weight: 600; font-size: 14px; }
+    .point strong{ display:block; margin-bottom: 2px; color:#fff; }
+    .point span{ color: rgba(255,255,255,.82); font-weight: 650; font-size: 14px; }
 
     /* Sections */
     section{ padding: 64px 0; }
@@ -294,7 +309,7 @@
       font-size: clamp(24px, 2.5vw, 36px);
       letter-spacing: -0.3px;
     }
-    .title p{ margin:0; color: var(--muted); font-weight: 600; }
+    .title p{ margin:0; color: var(--muted); font-weight: 700; }
 
     /* Cards / grids */
     .grid-4{
@@ -303,20 +318,21 @@
       gap: 16px;
     }
     .card{
-      background: var(--surface);
-      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(17,17,17,.12);
       border-radius: var(--radius);
       padding: 18px;
       box-shadow: var(--shadow);
     }
     .card h3{ margin: 8px 0 6px; font-size: 18px; }
-    .card p{ margin:0; color: var(--muted); font-weight: 600; }
+    .card p{ margin:0; color: var(--muted); font-weight: 700; }
+
     .icon{
       width: 44px; height: 44px;
       border-radius: 14px;
       display:grid; place-items:center;
-      background: rgba(74,163,255,.14);
-      border: 1px solid rgba(74,163,255,.26);
+      background: rgba(247,198,0,.22);
+      border: 1px solid rgba(17,17,17,.12);
       font-size: 22px;
     }
 
@@ -331,9 +347,9 @@
       border-radius: var(--radius);
       overflow:hidden;
       min-height: 320px;
-      border: 1px solid rgba(255,255,255,.12);
+      border: 1px solid rgba(17,17,17,.10);
       box-shadow: var(--shadow);
-      background: rgba(255,255,255,.04);
+      background: rgba(255,255,255,.45);
     }
     .media img{
       width:100%; height:100%;
@@ -346,18 +362,67 @@
     .media .overlay{
       position:absolute; inset:auto 0 0 0;
       padding: 16px;
-      background: linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,.15));
+      background: linear-gradient(to top, rgba(0,0,0,.80), rgba(0,0,0,.10));
     }
-    .media h3{ margin:0; font-size: 20px; }
-    .media p{ margin: 6px 0 0; color: rgba(255,255,255,.84); font-weight: 600; }
+    .media h3{ margin:0; font-size: 20px; color:#fff; }
+    .media p{ margin: 6px 0 0; color: rgba(255,255,255,.88); font-weight: 650; }
 
-    /* Pricing */
+    /* Pricing: cards (без “погонный”) */
+    .price-grid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 16px;
+      margin-top: 14px;
+    }
+    .price-card{
+      background: rgba(255,255,255,.86);
+      border: 1px solid rgba(17,17,17,.12);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .price-top{
+      display:flex; align-items:center; justify-content:space-between;
+      gap: 12px;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(247,198,0,.22);
+      border: 1px solid rgba(17,17,17,.10);
+      font-weight: 900;
+      font-size: 12px;
+      color: rgba(17,17,17,.90);
+      white-space:nowrap;
+    }
+    .price-card h3{ margin: 10px 0 6px; font-size: 18px; }
+    .price{
+      font-size: 30px;
+      font-weight: 950;
+      letter-spacing: -.3px;
+      margin-top: 8px;
+    }
+    .per{
+      color: var(--muted);
+      font-weight: 800;
+      margin-top: 2px;
+    }
+    .hint{
+      color: var(--muted);
+      font-weight: 700;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    /* Table (optional оставил — можно удалить если не надо) */
     .table-wrap{
       overflow:auto;
       border-radius: var(--radius);
-      border: 1px solid rgba(255,255,255,.12);
-      background: var(--surface-2);
+      border: 1px solid rgba(17,17,17,.12);
+      background: rgba(255,255,255,.86);
       box-shadow: var(--shadow);
+      margin-top: 18px;
     }
     table{
       width:100%;
@@ -367,51 +432,49 @@
     th, td{
       padding: 14px 16px;
       text-align:left;
-      border-bottom: 1px solid rgba(255,255,255,.10);
-      font-weight: 650;
+      border-bottom: 1px solid rgba(17,17,17,.10);
+      font-weight: 750;
     }
     th{
-      background: rgba(255,255,255,.06);
+      background: rgba(247,198,0,.18);
       position: sticky; top: 0;
       z-index: 1;
     }
-    tr:hover td{ background: rgba(255,255,255,.04); }
+    tr:hover td{ background: rgba(17,17,17,.03); }
 
     /* Form */
     .form{
       display:grid;
       grid-template-columns: 1fr 1fr;
       gap: 14px;
-      background: var(--surface);
-      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.86);
+      border: 1px solid rgba(17,17,17,.12);
       border-radius: var(--radius);
       padding: 18px;
       box-shadow: var(--shadow);
     }
     .field{ display:flex; flex-direction:column; gap: 8px; }
-    .field label{ font-weight: 850; }
+    .field label{ font-weight: 950; }
     input, select, textarea{
       width:100%;
       padding: 12px 12px;
       border-radius: 12px;
-      border: 1px solid rgba(255,255,255,.16);
-      background: rgba(0,0,0,.10);
-      color: var(--text);
+      border: 1px solid rgba(17,17,17,.14);
+      background: rgba(255,255,255,.90);
+      color: rgba(17,17,17,.92);
       font-size: 16px;
-    }
-    @media (prefers-color-scheme: light){
-      input, select, textarea{ background:#fff; border-color: rgba(15,23,42,.14); color:#0c1220; }
+      outline: none;
     }
     textarea{ min-height: 140px; resize: vertical; }
     .form .full{ grid-column: 1 / -1; }
-    .note{ font-size: 13px; color: var(--muted); margin-top: 6px; }
+    .note{ font-size: 13px; color: var(--muted); margin-top: 6px; font-weight: 700; }
     .honeypot{ display:none !important; }
 
     /* Footer */
     footer{
       padding: 52px 0 28px;
-      border-top: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
+      border-top: 1px solid rgba(17,17,17,.10);
+      background: rgba(255,255,255,.55);
     }
     .footer-grid{
       display:grid;
@@ -419,16 +482,45 @@
       gap: 18px;
     }
     footer h3{ margin:0 0 10px; }
-    footer a{ color: var(--text); text-decoration:none; opacity:.9; }
-    footer a:hover{ color: var(--brand); opacity: 1; }
+    footer a{ color: var(--text); text-decoration:none; opacity:.92; font-weight: 800; }
+    footer a:hover{ opacity: 1; }
     .copyright{
       margin-top: 22px;
       padding-top: 18px;
-      border-top: 1px solid rgba(255,255,255,.10);
+      border-top: 1px solid rgba(17,17,17,.10);
       color: var(--muted);
-      font-weight: 650;
+      font-weight: 800;
       font-size: 14px;
       display:flex; justify-content:space-between; gap: 12px; flex-wrap:wrap;
+    }
+
+    /* Floating WhatsApp */
+    .wa-fab{
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 2000;
+      width: 62px;
+      height: 62px;
+      border-radius: 999px;
+      background: #25D366;
+      box-shadow: 0 18px 42px rgba(17,17,17,.28);
+      display:grid;
+      place-items:center;
+      text-decoration:none;
+      transform: translateZ(0);
+      transition: transform .18s ease, filter .18s ease;
+      animation: waPulse 2.1s infinite;
+    }
+    .wa-fab:hover{ transform: translateY(-2px); filter: brightness(1.02); }
+    .wa-fab:active{ transform: translateY(0); }
+
+    .wa-fab svg{ width: 30px; height: 30px; fill: #fff; }
+
+    @keyframes waPulse{
+      0%   { box-shadow: 0 0 0 0 rgba(37,211,102,.45), 0 18px 42px rgba(17,17,17,.28); }
+      70%  { box-shadow: 0 0 0 18px rgba(37,211,102,0), 0 18px 42px rgba(17,17,17,.28); }
+      100% { box-shadow: 0 0 0 0 rgba(37,211,102,0), 0 18px 42px rgba(17,17,17,.28); }
     }
 
     /* Responsive */
@@ -437,6 +529,7 @@
       .grid-4{ grid-template-columns: repeat(2, minmax(0,1fr)); }
       .grid-3{ grid-template-columns: 1fr; }
       .footer-grid{ grid-template-columns: 1fr; }
+      .price-grid{ grid-template-columns: 1fr; }
       table{ min-width: 640px; }
     }
     @media (max-width: 768px){
@@ -444,9 +537,15 @@
       .burger{ display:flex; }
       .drawer{ display:block; }
       .form{ grid-template-columns: 1fr; }
+      .brand-name{ font-size: 16px; }
+      .brand-logo{ width: 42px; height: 42px; }
+    }
+    @media (max-width: 520px){
+      .phone{ display:none; } /* чтобы не мешало на совсем маленьких экранах */
+      .wa-fab{ width: 56px; height: 56px; right: 14px; bottom: 14px; }
+      .wa-fab svg{ width: 28px; height: 28px; }
     }
 
-    /* Reduced motion */
     @media (prefers-reduced-motion: reduce){
       html{ scroll-behavior:auto; }
       *{ transition:none !important; animation:none !important; }
@@ -460,7 +559,7 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "BAI GROUP",
-    "description": "Производство корпусной мебели в Актобе: кухонные гарнитуры, шкафы-купе, гардеробные, тумбы, офисная мебель.",
+    "description": "Производство корпусной мебели в Актобе: кухни, шкафы-купе, гардеробные, тумбы, офисная мебель.",
     "telephone": "+7-706-417-05-44",
     "address": {
       "@type": "PostalAddress",
@@ -478,9 +577,13 @@
   <header class="navbar" role="banner">
     <div class="container">
       <div class="nav">
+        <!-- LOGO PLACE -->
         <a class="brand" href="#top" aria-label="BAI GROUP — на главную">
-          <span class="logo-mark" aria-hidden="true"></span>
-          <span>BAI GROUP</span>
+          <span class="brand-logo" aria-hidden="true">
+            <!-- Вставь ваш логотип сюда -->
+            <img src="assets/logo.png" alt="BAI GROUP logo" onerror="this.style.display='none'">
+          </span>
+          <span class="brand-name">BAI GROUP</span>
         </a>
 
         <nav class="navlinks" aria-label="Основная навигация">
@@ -493,6 +596,7 @@
 
         <div class="nav-cta">
           <a class="phone" href="tel:+77064170544" aria-label="Позвонить в BAI GROUP: +7 706 417 05 44">📞 +7 (706) 417 05 44</a>
+
           <button class="burger" id="burger"
                   aria-label="Открыть меню"
                   aria-controls="drawer"
@@ -523,16 +627,16 @@
         <div class="hero-grid">
           <div class="stack">
             <span class="chip">📍 Актобе • Корпусная мебель на заказ</span>
-            <h1>Корпусная мебель BAI GROUP: кухня, шкафы, гардеробные</h1>
-            <p>Производим надежную корпусную мебель под размеры вашего помещения. Бесплатный замер и 3D-проект, аккуратный монтаж, гарантия 2 года.</p>
+            <h1>Корпусная мебель BAI GROUP: кухни, шкафы, гардеробные</h1>
+            <p>Производим корпусную мебель под размеры вашего помещения. Замер и 3D-проект, аккуратная установка, гарантия 2 года.</p>
 
             <div class="hero-actions">
               <a class="btn" href="#contact">Рассчитать стоимость</a>
               <a class="btn secondary" href="#categories">Смотреть работы</a>
             </div>
 
-            <p class="muted" style="margin-top:10px;font-weight:700;">
-              Специализация: кухонные шкафы • тумбы • гардеробные • офисная мебель (без мягкой мебели)
+            <p class="muted" style="margin-top:10px;font-weight:800;">
+              Специализация: кухни • тумбы • гардеробные • офисная мебель (без мягкой мебели)
             </p>
           </div>
 
@@ -549,21 +653,21 @@
                 <span class="dot" aria-hidden="true"></span>
                 <div>
                   <strong>3D-проект</strong>
-                  <span>Покажем, как будет выглядеть мебель до запуска в производство.</span>
+                  <span>Покажем, как будет выглядеть мебель до производства.</span>
                 </div>
               </div>
               <div class="point">
                 <span class="dot" aria-hidden="true"></span>
                 <div>
                   <strong>Сроки под контролем</strong>
-                  <span>Фиксируем этапы, держим связь и подтверждаем готовность.</span>
+                  <span>Фиксируем этапы и держим связь до установки.</span>
                 </div>
               </div>
               <div class="point">
                 <span class="dot" aria-hidden="true"></span>
                 <div>
                   <strong>Гарантия 2 года</strong>
-                  <span>По договору. Используем проверенную фурнитуру.</span>
+                  <span>По договору. Надёжная фурнитура и сборка.</span>
                 </div>
               </div>
             </div>
@@ -581,10 +685,10 @@
         </div>
 
         <div class="card">
-          <p style="margin:0;font-weight:700;color:var(--muted);">
-            Мы проектируем и производим корпусную мебель, которая служит годами: кухонные гарнитуры, шкафы-купе,
-            гардеробные, тумбы и офисные решения. Не распыляемся на мягкую мебель — делаем прочные конструкции,
-            точные стыки и продуманную эргономику.
+          <p style="margin:0;font-weight:800;color:var(--muted);">
+            Мы проектируем и производим корпусную мебель, которая служит годами: кухни, шкафы-купе, гардеробные,
+            тумбы и офисные решения. Мы не занимаемся мягкой мебелью — делаем прочные конструкции, точную геометрию
+            и удобную эргономику.
           </p>
         </div>
       </div>
@@ -602,22 +706,22 @@
           <article class="card">
             <div class="icon" aria-hidden="true">🔨</div>
             <h3>Прочность</h3>
-            <p>Качественные материалы и фурнитура, аккуратная сборка и монтаж.</p>
+            <p>Качественные материалы, фурнитура, аккуратный монтаж.</p>
           </article>
           <article class="card">
             <div class="icon" aria-hidden="true">📐</div>
             <h3>Индивидуально</h3>
-            <p>Замер + 3D-проект, подгонка под ваши размеры и задачи.</p>
+            <p>Замер + 3D-проект, под размеры и задачи помещения.</p>
           </article>
           <article class="card">
             <div class="icon" aria-hidden="true">⏱️</div>
             <h3>Сроки</h3>
-            <p>Планируем этапы и держим вас в курсе готовности.</p>
+            <p>Планируем этапы, держим в курсе готовности.</p>
           </article>
           <article class="card">
             <div class="icon" aria-hidden="true">🛡️</div>
             <h3>Гарантия 2 года</h3>
-            <p>Уверенность в результате и поддержка после установки.</p>
+            <p>По договору. Поддержка после установки.</p>
           </article>
         </div>
       </div>
@@ -635,48 +739,33 @@
           <article class="media">
             <img
               src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=80"
-              srcset="
-                https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=600&q=80 600w,
-                https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=80 900w,
-                https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1200&q=80 1200w"
-              sizes="(max-width: 980px) 100vw, 33vw"
               alt="Кухонные шкафы и гарнитуры"
               loading="lazy" decoding="async" />
             <div class="overlay">
-              <h3>Кухонные шкафы</h3>
-              <p>Гарнитуры, навесные и нижние модули, пеналы.</p>
+              <h3>Кухни</h3>
+              <p>Гарнитуры, модули, пеналы, встроенные решения.</p>
             </div>
           </article>
 
           <article class="media">
             <img
               src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80"
-              srcset="
-                https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80 600w,
-                https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80 900w,
-                https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=80 1200w"
-              sizes="(max-width: 980px) 100vw, 33vw"
               alt="Гардеробные системы и шкафы"
               loading="lazy" decoding="async" />
             <div class="overlay">
-              <h3>Гардеробные</h3>
-              <p>Встроенные и корпусные шкафы, системы хранения.</p>
+              <h3>Шкафы и гардеробные</h3>
+              <p>Системы хранения под вашу планировку.</p>
             </div>
           </article>
 
           <article class="media">
             <img
               src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80"
-              srcset="
-                https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=600&q=80 600w,
-                https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80 900w,
-                https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80 1200w"
-              sizes="(max-width: 980px) 100vw, 33vw"
               alt="Офисная мебель"
               loading="lazy" decoding="async" />
             <div class="overlay">
               <h3>Офисная мебель</h3>
-              <p>Шкафы, полки, рабочие места, тумбы.</p>
+              <p>Шкафы, полки, тумбы, рабочие места.</p>
             </div>
           </article>
         </div>
@@ -687,25 +776,57 @@
     <section id="prices">
       <div class="container">
         <div class="title">
-          <h2>Примерные цены</h2>
-          <p>Точная стоимость зависит от размеров, фурнитуры и материалов.</p>
+          <h2>Цены на кухню</h2>
+          <p>Ориентировочно за 1 м кухни. Итог зависит от комплектации, фурнитуры и размеров.</p>
         </div>
 
-        <div class="table-wrap" role="region" aria-label="Таблица цен" tabindex="0">
+        <!-- Cards: цены за 1 м кухни -->
+        <div class="price-grid" aria-label="Цены за 1 метр кухни">
+          <div class="price-card">
+            <div class="price-top">
+              <div class="badge">Базовый</div>
+              <div class="icon" aria-hidden="true">🧱</div>
+            </div>
+            <h3>ЛДСП</h3>
+            <div class="price">140 000 ₸</div>
+            <div class="per">за 1 м кухни</div>
+            <div class="hint">Практичный вариант для большинства проектов.</div>
+          </div>
+
+          <div class="price-card">
+            <div class="price-top">
+              <div class="badge">Оптимальный</div>
+              <div class="icon" aria-hidden="true">🎞️</div>
+            </div>
+            <h3>МДФ плёнка</h3>
+            <div class="price">160 000 ₸</div>
+            <div class="per">за 1 м кухни</div>
+            <div class="hint">Хороший баланс внешнего вида и цены.</div>
+          </div>
+
+          <div class="price-card">
+            <div class="price-top">
+              <div class="badge">Премиум</div>
+              <div class="icon" aria-hidden="true">🎨</div>
+            </div>
+            <h3>МДФ краска</h3>
+            <div class="price">190 000 ₸</div>
+            <div class="per">за 1 м кухни</div>
+            <div class="hint">Максимальная эстетика и качество отделки.</div>
+          </div>
+        </div>
+
+        <!-- OPTIONAL: оставил вашу таблицу, если нужна -->
+        <div class="table-wrap" role="region" aria-label="Примеры цен на изделия" tabindex="0">
           <table>
             <thead>
               <tr>
-                <th>Тип мебели</th>
+                <th>Изделие</th>
                 <th>Материал</th>
                 <th>Примерная стоимость</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Кухонный гарнитур (3 м)</td>
-                <td>ЛДСП</td>
-                <td>от 250 000 ₸</td>
-              </tr>
               <tr>
                 <td>Шкаф-купе (2 × 2.3 м)</td>
                 <td>ЛДСП + фурнитура</td>
@@ -735,7 +856,6 @@
           <p>Оставьте заявку — рассчитаем стоимость и предложим варианты.</p>
         </div>
 
-        <!-- ВАЖНО: для реальной отправки подключи backend/CRM (Telegram bot, WhatsApp API, email, Bitrix, etc.) -->
         <form class="form" id="contactForm" novalidate>
           <div class="field">
             <label for="name">Ваше имя <span aria-hidden="true">*</span></label>
@@ -752,8 +872,8 @@
           <div class="field full">
             <label for="category">Тип мебели</label>
             <select id="category" name="category">
-              <option value="kitchen">Кухонные шкафы</option>
-              <option value="wardrobe">Гардеробные</option>
+              <option value="kitchen">Кухня</option>
+              <option value="wardrobe">Шкаф / гардеробная</option>
               <option value="office">Офисная мебель</option>
               <option value="other">Другое</option>
             </select>
@@ -762,10 +882,9 @@
           <div class="field full">
             <label for="message">Пожелания</label>
             <textarea id="message" name="message" placeholder="Размеры (если знаете), материалы, фото/референсы, сроки..."></textarea>
-            <div class="note">Совет: добавьте примерные размеры и пожелания по материалу/фурнитуре — так расчет будет точнее.</div>
+            <div class="note">Совет: добавьте примерные размеры и пожелания по материалу/фурнитуре — так расчёт будет точнее.</div>
           </div>
 
-          <!-- Honeypot against bots -->
           <div class="honeypot">
             <label>Оставьте поле пустым</label>
             <input type="text" name="company" tabindex="-1" autocomplete="off" />
@@ -788,17 +907,17 @@
       <div class="footer-grid">
         <div>
           <h3>BAI GROUP</h3>
-          <p class="muted" style="margin:0;font-weight:700;">Производство корпусной мебели в Актобе</p>
-          <p class="muted" style="margin:12px 0 0;font-weight:700;">
-            Специализация: кухонные шкафы, тумбы, гардеробные, офисная мебель
+          <p class="muted" style="margin:0;font-weight:800;">Корпусная мебель на заказ в Актобе</p>
+          <p class="muted" style="margin:12px 0 0;font-weight:800;">
+            Специализация: кухни, шкафы, гардеробные, офисная мебель
           </p>
         </div>
 
         <div>
           <h3>Контакты</h3>
           <p style="margin:0 0 10px;"><a href="tel:+77064170544">📞 +7 (706) 417 05 44</a></p>
-          <p class="muted" style="margin:0;font-weight:700;">📍 г. Актобе</p>
-          <p class="muted" style="margin:10px 0 0;font-weight:700;">
+          <p class="muted" style="margin:0;font-weight:800;">📍 г. Актобе</p>
+          <p class="muted" style="margin:10px 0 0;font-weight:800;">
             Пн-Пт: 10:00-19:00<br/>Сб: 10:00-13:00<br/>Вс: выходной
           </p>
         </div>
@@ -816,11 +935,22 @@
       </div>
 
       <div class="copyright">
-        <span>© BAI GROUP 2025 — Корпусная мебель в Актобе</span>
-        <span class="muted">Сделано с упором на скорость, доступность и SEO</span>
+        <span>© BAI GROUP 2025 — Актобе</span>
+        <span class="muted">Сайт: быстрый, адаптивный, удобный</span>
       </div>
     </div>
   </footer>
+
+  <!-- Floating WhatsApp -->
+  <a class="wa-fab"
+     href="https://wa.me/77064170544?text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7%20BAI%20GROUP!%20%D0%9A%D1%83%D1%85%D0%BD%D1%8F%D2%93%D0%B0%20%D0%B5%D1%81%D0%B5%D0%BF%D1%82%D0%B5%D1%83%20%D0%BA%D0%B5%D1%80%D0%B5%D0%BA%20%D0%B5%D0%B4%D1%96."
+     target="_blank" rel="noopener"
+     aria-label="Написать в WhatsApp">
+    <!-- WhatsApp icon (inline SVG) -->
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M19.11 17.44c-.28-.14-1.64-.81-1.9-.9-.25-.1-.44-.14-.62.14-.18.28-.71.9-.87 1.08-.16.18-.32.21-.6.07-.28-.14-1.17-.43-2.22-1.38-.82-.73-1.37-1.63-1.53-1.9-.16-.28-.02-.43.12-.57.12-.12.28-.32.41-.48.14-.16.18-.28.28-.46.09-.18.05-.35-.02-.49-.07-.14-.62-1.5-.85-2.05-.22-.54-.45-.47-.62-.47h-.53c-.18 0-.49.07-.74.35-.25.28-.97.95-.97 2.32 0 1.37 1 2.69 1.14 2.88.14.18 1.98 3.03 4.8 4.25.67.29 1.2.46 1.61.59.68.22 1.3.19 1.79.12.55-.08 1.64-.67 1.87-1.31.23-.64.23-1.19.16-1.31-.07-.12-.25-.19-.53-.33zM16.02 3C9.39 3 4 8.38 4 15c0 2.34.67 4.53 1.84 6.39L4.65 29 12.5 27.9c1.77.97 3.81 1.52 5.95 1.52C25.07 29.42 30 24.05 30 17.43 30 10.8 22.65 3 16.02 3zm0 23.5c-2.02 0-3.88-.6-5.45-1.62l-.39-.25-4.66.65.76-4.54-.26-.41A10.33 10.33 0 0 1 5.7 15c0-5.71 4.62-10.35 10.32-10.35 5.7 0 10.32 4.64 10.32 10.35 0 5.71-4.62 10.35-10.32 10.35z"/>
+    </svg>
+  </a>
 
   <script>
     // Mobile menu (a11y)
@@ -831,12 +961,7 @@
       burger.setAttribute('aria-expanded', String(open));
       drawer.hidden = !open;
       drawer.classList.toggle('open', open);
-      if(open){
-        // lock scroll
-        document.documentElement.style.overflow = 'hidden';
-      } else {
-        document.documentElement.style.overflow = '';
-      }
+      document.documentElement.style.overflow = open ? 'hidden' : '';
     }
 
     burger.addEventListener('click', () => {
@@ -844,7 +969,6 @@
       setDrawer(!isOpen);
     });
 
-    // Close on outside click / Esc
     document.addEventListener('keydown', (e) => {
       if(e.key === 'Escape' && burger.getAttribute('aria-expanded') === 'true'){
         setDrawer(false);
@@ -853,10 +977,7 @@
     });
 
     drawer.addEventListener('click', (e) => {
-      // if click on link, close
-      if(e.target.closest('a')){
-        setDrawer(false);
-      }
+      if(e.target.closest('a')) setDrawer(false);
     });
 
     document.addEventListener('click', (e) => {
@@ -866,13 +987,11 @@
       if(!inside) setDrawer(false);
     });
 
-    // Smooth scroll offset (keep -navH feeling) is handled by body padding-top.
-    // Form handling (client-side demo)
+    // Form handling (demo)
     const form = document.getElementById('contactForm');
     const status = document.getElementById('formStatus');
 
     function validatePhone(value){
-      // простая проверка: цифры >= 10
       const digits = (value || '').replace(/\D/g, '');
       return digits.length >= 10;
     }
@@ -882,8 +1001,6 @@
       status.textContent = '';
 
       const data = new FormData(form);
-
-      // honeypot
       if ((data.get('company') || '').trim().length > 0) return;
 
       const name = (data.get('name') || '').trim();
@@ -898,8 +1015,6 @@
         return;
       }
 
-      // TODO: вместо этого блока подключи реальную отправку:
-      // fetch('/api/lead', { method:'POST', body: JSON.stringify({...}), headers:{'Content-Type':'application/json'} })
       status.textContent = 'Заявка отправлена! Мы свяжемся с вами в ближайшее время.';
       form.reset();
     });
